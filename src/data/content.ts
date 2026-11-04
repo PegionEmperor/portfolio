@@ -1,12 +1,23 @@
 export type Lang = 'ru' | 'en';
 export type ProjectCategory = 'pm' | 'marketing' | 'gamedev';
 
-export interface ProjectMedia {
-  type: 'image' | 'video' | 'link';
-  url: string;
-  caption?: string;
-  poster?: string;
-}
+export type ProjectMedia =
+  | {
+      type: 'image';
+      url: string;
+      caption?: string;
+    }
+  | {
+      type: 'video';
+      url: string;
+      caption?: string;
+      poster?: string;
+    }
+  | {
+      type: 'link';
+      url: string;
+      caption?: string;
+    };
 
 export interface Project {
   id: string;
