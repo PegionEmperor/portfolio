@@ -86,7 +86,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       stats: [
         { value: '4–5', label: 'проектов одновременно в работе' },
         { value: 'до 15', label: 'участников кросс-функциональной команды' },
-        { value: '1,5 года', label: 'R&D-исследование и 6 лабораторных проверок' },
+        { value: '1,5 года', label: 'R&D-исследование за 1,5 года и 6 проверок продукта' },
       ],
     },
     ui: {
@@ -95,7 +95,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       moreTitle: 'Другие проекты и направления',
       showProjectsLabel: 'Показать остальные проекты',
       hideProjectsLabel: 'Свернуть проекты',
-      resultLabel: 'Результат',
+      resultLabel: 'Эффект для проекта',
       teamLabel: 'Основные участники команды',
       toolsLabel: 'Инструменты',
       mainNavigationLabel: 'Основная навигация',
@@ -122,17 +122,17 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       title: 'ИИ-инструменты в работе',
       points: [
         'Уверенно использую LLM и генеративные инструменты для аналитики, работы с информацией и подготовки контента',
-        'Проводил внутренние обучения коллег по работе с ИИ-инструментами и формированию запросов',
-        'Использовал ИИ-инструменты при проектировании и разработке этого сайта-портфолио',
+        'Внутреннее обучение коллег работе с ИИ-инструментами и составлению эффективных запросов',
+        'Применение ИИ-инструментов при проектировании и разработке этого сайта-портфолио',
       ],
     },
     about: {
       title: 'Обо мне',
       text: [
-        'Работал в ГК «МП-Технологии» с августа 2024 по ноябрь 2026 года. Начинал с проектных задач; примерно с начала 2025 года зона ответственности расширилась на контент-маркетинг, аналитические продукты, R&D и координацию внутренних процессов.',
-        'Вёл проекты в сфере B2B-оборудования и упаковки: собирал требования, координировал экспертов и исполнителей, контролировал сроки, согласования и подготовку итоговых материалов. Обычно одновременно в работе находилось 4–5 проектов; в отдельных командах участвовало до 15 человек.',
-        'Также обеспечивал операционную и техническую поддержку главного офиса в Калининграде, где работало ориентировочно 30–50 человек. Администрировал Bitrix24, Яндекс Диск и Яндекс Почту, создавал учётные записи, настраивал доступы, резервировал данные, сопровождал рабочие места и корпоративную связь — около 25 SIM-карт.',
-        'Вне работы читаю художественную литературу и коллекционирую книги, увлекаюсь стратегическими настольными играми, варгеймами и НРИ. Организовывал турниры на 8–10 участников и игровые выходные в ТЦ от лица HobbyGames: ориентировочная проходимость площадки составляла 60–120 посетителей за шесть часов. Проводил игровые встречи для групп от 2 до 10 человек самостоятельно и в составе команды, вёл регулярную кампанию D&D на протяжении полугода, участвовал в организации масштабных НРИ-игр.'
+        'Опыт работы в ГК «МП-Технологии»: август 2024 — ноябрь 2026. С начала 2025 года — расширение зоны ответственности на контент-маркетинг, аналитические продукты, R&D и координацию внутренних процессов.',
+        'Профессиональный фокус — управление проектами в сфере B2B-оборудования и упаковки: сбор требований, координация экспертов и исполнителей, планирование этапов, контроль сроков и согласований, подготовка итоговых материалов. Одновременная работа с 4–5 проектами; кросс-функциональные команды — до 15 участников.',
+        'Операционное направление — административная и техническая поддержка главного офиса в Калининграде. Администрирование Bitrix24, Яндекс Диска и Яндекс Почты; создание учётных записей, настройка прав доступа, резервное копирование данных, сопровождение рабочих мест, офисной техники, локальной сети и корпоративной связи.',
+        'Вне работы — художественная литература и коллекционирование книг, стратегические настольные игры, варгеймы и НРИ. Организация турниров на 8–10 участников и игровых выходных в торговом центре от лица HobbyGames: поток посетителей — 60–120 человек за шесть часов. Самостоятельное проведение игровых встреч для групп от 2 до 10 человек и работа в составе команды; ведение регулярной кампании D&D в течение шести месяцев; организация масштабных НРИ-игр.'
       ],
       educationTitle: 'Образование',
       education: [
@@ -182,13 +182,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Менеджер по продажам',
         ],
         description:
-          'Вёл разработку трёх аналитических трендбуков: отвечал за аналитическую часть, сбор экспертных материалов, организацию работы команды и поэтапную передачу готовых разделов CEO.',
+          'Управление разработкой трёх аналитических трендбуков: авторство аналитической части, сбор экспертных материалов, координация команды, сборка презентаций и поэтапная передача готовых разделов CEO.',
         result:
-          'Подготовлены и представлены три аналитических продукта. После каждого выпуска проводил внутренние презентации для 30–50 участников; также организовывал показы ранних версий внешней аудитории.',
+          'Три готовых аналитических трендбука; внутренняя презентация каждого выпуска для 30–50 участников и демонстрации ранних версий внешней аудитории.',
         achievements: [
-          'Был основным автором аналитической части, собирал материалы в единую презентацию и передавал её дизайнерам.',
-          'Собирал экспертные материалы и обратную связь от технологов, продуктологов, маркетинга и продаж.',
-          'Согласовывал материалы с директором по маркетингу, контролировал сроки и организовывал поэтапную сдачу CEO.',
+          'Авторство основной аналитической части; сборка единой презентации и передача материалов дизайнерам.',
+          'Сбор экспертных материалов и обратной связи от технологов, продуктологов, маркетинга и отдела продаж.',
+          'Согласование материалов с директором по маркетингу, контроль сроков и поэтапная сдача результатов CEO.',
         ],
         tools: ['Bitrix24', 'Figma', 'Презентации', 'Экспертные интервью'],
       },
@@ -201,9 +201,9 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         role: 'Автор и разработчик рабочего прототипа',
         detailsTitle: 'Реализованные функции по ролям',
         description:
-          'Разработал рабочий прототип информационной системы сервисного обслуживания. Проект стал темой дипломной работы; также дистанционно участвовал в демонстрации прототипа на выставке АПМ 2025.',
+          'Разработка рабочего прототипа информационной системы сервисного обслуживания в рамках дипломного проекта; дистанционное участие в демонстрации решения на выставке АПМ 2025.',
         result:
-          'Рабочий прототип охватывает основные сценарии пяти ролей: клиента, сервисного инженера, сервисного менеджера, руководителя и администратора.',
+          'Единый рабочий прототип с функциональными сценариями пяти ролей: клиента, сервисного инженера, сервисного менеджера, руководителя и администратора.',
         achievements: [
           'Клиент: регистрация, добавление оборудования, создание и отслеживание заявок, комментарии, история обслуживания, календарь ТО, доступ к документации и заказ запасных частей.',
           'Сервисный инженер: просмотр назначенных заявок, смена статусов, внесение записей о выполненных работах и использованных запчастях, завершение заявки ответственным инженером и просмотр графика работ.',
@@ -228,12 +228,12 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Помощь проектного менеджера — по необходимости',
         ],
         description:
-          'Вёл проект ребрендинга от первого брифа до итоговой презентации клиенту. Координировал разработку логотипа, упаковки и оформления торговой точки, поддерживал прямую коммуникацию с заказчиком.',
+          'Полный цикл управления ребрендингом — от первого брифа до итоговой презентации клиенту: координация разработки логотипа, упаковки и оформления торговой точки, прямая коммуникация с заказчиком.',
         result:
-          'Проект завершён за 3–4 недели. Клиент начал публиковать разработанные материалы в Instagram и занимается их патентованием.',
+          'Комплекс материалов по логотипу, упаковке и оформлению торговой точки подготовлен за 3–4 недели; клиент использует разработки в публикациях Instagram и занимается их патентованием.',
         achievements: [
-          'Был основным PM на всём протяжении проекта: планировал работу, координировал участников и контролировал сроки.',
-          'Организовывал коммуникацию с клиентом, согласование промежуточных решений и финальную презентацию.',
+          'Полный цикл PM: планирование задач, координация участников и контроль сроков на всех этапах проекта.',
+          'Коммуникация с клиентом, согласование промежуточных решений, подготовка и проведение финальной презентации.',
         ],
         tools: ['Bitrix24', 'Figma', 'Клиентские встречи', 'Презентации'],
       },
@@ -246,13 +246,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         role: 'Project Manager / Координатор исследования',
         teamSize: '3–4 человека',
         description:
-          'Координировал два параллельных эксперимента по оценке сохранности продукта: испытания в термостате и хранение продукта на полках в упаковке компании.',
+          'Координация двух параллельных экспериментов по оценке сохранности продукта: испытания в термостате и хранение на полках в упаковке компании.',
         result:
-          'В ходе полочного эксперимента лабораторные проверки не выявили признаков порчи продукта за весь период наблюдения. Результат подтвердил данные предыдущего этапа.',
+          'Шесть контрольных проверок продукта за 1,5 года. В ходе полочного эксперимента лаборатория не выявила признаков порчи; результат подтвердил данные предыдущего этапа.',
         achievements: [
-          'Организовал шесть проверок продукта на протяжении всего эксперимента.',
-          'Подготовил техническое задание для ассистента в филиале, график проверок и систему учёта партий.',
-          'Координировал передачу образцов и получение результатов лабораторных проверок.',
+          'Планирование и координация шести проверок продукта на протяжении эксперимента.',
+          'Подготовка технического задания для ассистента в филиале, графика проверок и системы учёта партий.',
+          'Координация передачи образцов и получения результатов лабораторных проверок.',
         ],
         tools: ['Bitrix24', 'Excel', 'Google Sheets', 'Лабораторные отчёты'],
       },
@@ -265,13 +265,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         role: 'Project Manager / Прототипист',
         teamSize: '3–4 человека',
         description:
-          'Участвовал в создании цифровой витрины PACK-5 как части сайта pack-5.ru. Координировал работу внешнего веб-разработчика, участвовал в формировании требований и прототипировании интерфейсных решений в Figma.',
+          'Координация создания цифровой витрины PACK-5 на pack-5.ru: взаимодействие с внешним веб-разработчиком, формирование требований и прототипирование интерфейсных решений в Figma.',
         result:
-          'Цифровая витрина запущена. На выставке АПМ около 100 посетителей приняли участие в опросе; 30–40 человек прошли подробную анкету.',
+          'Запуск цифровой витрины PACK-5; прототип калькулятора упаковочных решений в Figma; сбор обратной связи на АПМ — 30–40 заполненных подробных анкет.',
         achievements: [
-          'Спроектировал интерактивный прототип калькулятора упаковочных решений в Figma.',
-          'Координировал взаимодействие с внешним веб-разработчиком и подготовку материалов для цифровой витрины.',
-          'Организовал сбор обратной связи от посетителей выставки.',
+          'Проектирование интерактивного прототипа калькулятора упаковочных решений в Figma.',
+          'Координация внешнего веб-разработчика и подготовка материалов для цифровой витрины.',
+          'Организация сбора и структурирование обратной связи посетителей выставки.',
         ],
         tools: ['Figma', 'Bitrix24', 'Требования к веб-разработке', 'Опросы'],
         media: [
@@ -285,15 +285,14 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         period: '2024 — 2026',
         role: 'Project Operations / IT Support',
         description:
-          'Обеспечивал административную и техническую поддержку главного офиса в Калининграде, где работало ориентировочно 30–50 сотрудников. Сопровождал корпоративные сервисы, рабочие места, офисную технику и локальную сеть.',
+          'Административная и техническая поддержка главного офиса в Калининграде: сопровождение корпоративных сервисов, рабочих мест, офисной техники и локальной сети.',
         result:
-          'Поддерживал работоспособность корпоративных сервисов и рабочих мест; при инцидентах занимался оперативным решением проблем, чтобы сократить простой сотрудников.',
+          'Оперативное устранение технических инцидентов и восстановление работоспособности рабочих мест и корпоративных сервисов.',
         achievements: [
-          'Администрировал Яндекс Диск и Яндекс Почту: создавал учётные записи, настраивал права доступа, резервировал данные Диска, контролировал поступление и распределение входящей корреспонденции.',
-          'Сопровождал около 25 корпоративных SIM-карт: оформлял договоры, акты и запросы, заказывал и регистрировал SIM-карты, решал вопросы с менеджером Билайн и бухгалтерией.',
-          'Обеспечивал поддержку компьютеров, ноутбуков, принтеров и офисной сети: настраивал рабочие места, устанавливал программное обеспечение, предоставлял доступы, диагностировал и устранял неисправности.',
-          'Участвовал в выборе офисной техники, обосновывал закупки и защищал бюджет.',
-          'Создавал учётные записи и настраивал доступы сотрудников к корпоративным сервисам.',
+          'Администрирование Яндекс Диска и Яндекс Почты: создание учётных записей, настройка прав доступа, резервное копирование данных, контроль поступления и распределения входящей корреспонденции.',
+          'Сопровождение корпоративной мобильной связи: оформление договоров, актов и запросов; заказ и регистрация SIM-карт; взаимодействие с менеджером Билайн и бухгалтерией.',
+          'Полное сопровождение компьютеров, ноутбуков, принтеров и офисной сети: настройка рабочих мест, установка программного обеспечения, предоставление доступов, диагностика и устранение неисправностей.',
+          'Подбор офисной техники, обоснование закупок и защита бюджета.',
         ],
         tools: ['Bitrix24', 'Яндекс Диск', 'Яндекс Почта', 'Билайн', 'Windows', 'IT Support'],
       },
@@ -304,13 +303,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         period: 'Внутренний проект',
         role: 'Участник проектирования процессов / администратор Bitrix24',
         description:
-          'Совместно с коллегой прорабатывал в Draw.io сценарии прохождения сделки от продажи оборудования до производства с учётом разных вариантов заводов и последовательности действий. На основе согласованной логики внешний специалист настроил в Bitrix24 две автоматизированные воронки.',
+          'Проектирование в Draw.io сценариев сделки от продажи оборудования до производства с учётом разных вариантов заводов и последовательности действий. Согласованная логика служит основой двух автоматизированных воронок Bitrix24; техническая настройка — зона ответственности внешнего специалиста.',
         result:
-          'Воронки показывали текущий этап сделки, ответственного сотрудника и следующее необходимое действие. Логика процессов проходила проверку CEO.',
+          'Две автоматизированные воронки «Продажа → Производство»: на каждом этапе обозначены ответственный сотрудник и следующее действие; логика процессов согласована с CEO.',
         achievements: [
-          'Моделировал сценарии прохождения сделки и последовательность действий в Draw.io.',
-          'Передавал согласованную логику внешнему специалисту для настройки автоматизаций в Bitrix24.',
-          'Администрировал готовые воронки совместно с коллегой и обучал новых сотрудников работе с ними и Bitrix24.',
+          'Моделирование сценариев прохождения сделки и последовательности действий в Draw.io.',
+          'Подготовка и передача согласованной логики внешнему специалисту для настройки автоматизаций в Bitrix24.',
+          'Совместное с коллегой администрирование готовых воронок и обучение новых сотрудников работе с ними и Bitrix24.',
         ],
         tools: ['Draw.io', 'Bitrix24', 'Обучение сотрудников'],
       },
@@ -321,12 +320,12 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         period: '2025 — 2026',
         role: 'Контент-маркетолог / Видеомейкер',
         description:
-          'Готовил контент, участвовал в съёмке и монтаже видеоматериалов, занимался продвижением продукции компании на видеоплатформах.',
+          'Подготовка видеоконтента о продукции компании: организация съёмок, монтаж и публикация материалов на видеоплатформах.',
         result:
-          'Просмотры YouTube увеличились примерно с 84 до 160 тыс. Совокупно на видеоплатформах за год получено около 350–400 тыс. просмотров.',
+          '350–400 тыс. просмотров на видеоплатформах за год; рост времени просмотра YouTube на 99% — до 410 часов.',
         achievements: [
-          'Увеличил время просмотра YouTube на 99% — до 410 часов.',
-          'Работал с видеоконтентом для YouTube и других площадок компании.',
+          'Рост времени просмотра YouTube на 99% — до 410 часов.',
+          'Производство и адаптация видеоконтента для YouTube и других площадок компании.',
         ],
         tools: ['YouTube', 'CapCut', 'Photoshop', 'Видеопроизводство'],
       },
@@ -337,12 +336,12 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         period: '2025 — 2026',
         role: 'Email-маркетолог',
         description:
-          'Организовывал регулярные email-рассылки, работал с сегментацией клиентской базы, проводил опросы и анализировал реакцию аудитории.',
+          'Email-маркетинг: планирование регулярных рассылок, сегментация клиентской базы, проведение опросов и анализ реакции аудитории.',
         result:
-          'Open Rate вырос с уровня ниже 10% примерно до 15%; количество прочтений увеличилось на 50%, переходы по ссылкам — почти вдвое.',
+          'Рост Open Rate относительно исходного уровня ниже 10%; количество прочтений увеличилось на 50%; число переходов по ссылкам также выросло.',
         achievements: [
-          'Работал с сегментированной базой примерно на 16 000 контактов.',
-          'Создавал структуру и шаблоны рассылок в Tilda.',
+          'Сегментация клиентской базы и настройка регулярных email-коммуникаций.',
+          'Разработка структуры и шаблонов рассылок в Tilda.',
         ],
         tools: ['Email Marketing', 'Tilda', 'Excel', 'Analytics'],
       },
@@ -353,11 +352,11 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         period: '2025 — 2026',
         role: 'Контент-маркетолог',
         description:
-          'Работал с корпоративными социальными сетями, готовил SEO-материалы для сайта и участвовал в привлечении потенциальных клиентов на профильных выставках.',
-        result: 'Около 40 целевых лидов получено на выставке во второй месяц работы.',
+          'Ведение корпоративных социальных сетей, подготовка SEO-материалов для сайта и участие в выставочной лидогенерации.',
+        result: 'Целевые обращения с профильной выставки уже во второй месяц работы; развитие корпоративных каналов и SEO-контента.',
         achievements: [
-          'Вёл Telegram-канал и Instagram компании.',
-          'Готовил SEO-статьи, подбирал ключевые запросы и метаописания.',
+          'Ведение Telegram-канала и Instagram компании.',
+          'Подготовка SEO-статей, подбор ключевых запросов и метаописаний.',
         ],
         tools: ['Telegram', 'Instagram', 'SEO', 'Копирайтинг', 'Выставки'],
       },
@@ -369,11 +368,11 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         role: 'PM / Lead 3D Generalist / Community Manager',
         teamSize: '5 человек',
         description:
-          'Участвовал в разработке игрового сервера на платформе Crystalix, создавал 3D-контент для авторов YouTube и координировал работу небольшой команды.',
-        result: 'Пиковый онлайн сервера — около 300 игроков; видео с созданными моделями набирали 20–31 тыс. просмотров.',
+          'Разработка игрового сервера на платформе Crystalix, создание 3D-контента для авторов YouTube и координация команды.',
+        result: 'Видео с созданными 3D-моделями — 20–31 тыс. просмотров; сообщество проекта во VK — 715 участников.',
         achievements: [
-          'Создал сотни 3D-моделей в Blockbench и Blender для объектов, окружения и пяти игровых эпох.',
-          'Координировал задачи команды из пяти человек и развивал сообщества проекта: VK — 715 участников, Discord и Telegram.',
+          'Создание сотен 3D-моделей в Blockbench и Blender: объекты, окружение и контент для пяти игровых эпох.',
+          'Координация команды из пяти человек и развитие сообществ проекта в VK, Discord и Telegram.',
         ],
         tools: ['Blender', 'Blockbench', 'Photoshop', 'Unity (C#)', 'Trello', 'Discord', 'VK / Telegram'],
       },
@@ -384,13 +383,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         period: 'В период работы в МП-Технологии',
         role: '3D-моделирование и визуализация',
         description:
-          'Создавал в Blender 3D-визуализации производственных линий. Самостоятельно моделировал отдельные единицы оборудования по чертежам и фотографиям, сверял модели с реальным оборудованием и собирал из них линии разных масштабов и конфигураций.',
+          '3D-визуализация производственных линий в Blender: самостоятельное моделирование единиц оборудования по чертежам и фотографиям, сверка моделей с реальным оборудованием и сборка линий разных масштабов и конфигураций.',
         result:
-          'Подготовил около 10 вариантов производственных линий разного масштаба и конфигурации.',
+          'Компоновки производственных линий разных масштабов и конфигураций на основе самостоятельно смоделированных единиц оборудования.',
         achievements: [
-          'Моделировал отдельные единицы оборудования на основе чертежей, фотографий и визуального изучения реальных образцов.',
-          'Собирал отдельные модели в компоновки производственных линий.',
-          'Создавал варианты линий с разными масштабами и конфигурациями.',
+          'Самостоятельное моделирование оборудования на основе чертежей, фотографий и визуального изучения реальных образцов.',
+          'Сборка отдельных моделей в компоновки производственных линий.',
+          'Подготовка вариантов компоновки с разными масштабами и конфигурациями.',
         ],
         tools: ['Blender', '3D-моделирование', 'Промышленная визуализация'],
       },
@@ -407,7 +406,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       stats: [
         { value: '4–5', label: 'projects handled in parallel' },
         { value: 'up to 15', label: 'members in a cross-functional team' },
-        { value: '1.5 years', label: 'R&D experiment with 6 lab checks' },
+        { value: '1.5 years', label: '1.5-year R&D study with 6 product checks' },
       ],
     },
     ui: {
@@ -416,7 +415,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       moreTitle: 'Additional Projects & Experience',
       showProjectsLabel: 'Show additional projects',
       hideProjectsLabel: 'Hide projects',
-      resultLabel: 'Result',
+      resultLabel: 'Project impact',
       teamLabel: 'Key team members',
       toolsLabel: 'Tools',
       mainNavigationLabel: 'Main navigation',
@@ -443,17 +442,17 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       title: 'AI Tools in My Workflow',
       points: [
         'Confident user of LLMs and generative tools for research, information processing, and content preparation',
-        'Conducted internal training sessions to help colleagues use AI tools and write effective prompts',
-        'Used AI tools while designing and building this portfolio website',
+        'Internal training for colleagues on AI tools and effective prompt writing',
+        'Use of AI tools in designing and building this portfolio website',
       ],
     },
     about: {
       title: 'About Me',
       text: [
-        'Worked at MP-Technologies Group from August 2024 to November 2026. I started with project coordination tasks; around early 2025, my responsibilities expanded to content marketing, analytical products, R&D, and internal operations.',
-        'Managed projects in B2B equipment and packaging: gathered requirements, coordinated experts and contributors, tracked timelines and approvals, and prepared final deliverables. Typically, 4–5 projects were in progress in parallel; selected cross-functional teams included up to 15 people.',
-        'I also provided administrative and technical support for the Kaliningrad head office, which had approximately 30–50 employees. I administered Bitrix24, Yandex Disk, and Yandex Mail, created user accounts, configured access, backed up Disk data, supported workstations, and managed corporate telecom services covering around 25 SIM cards.',
-        'Outside work, I read fiction and collect books. I enjoy strategy board games, wargames, and tabletop role-playing games. I organized tournaments for 8–10 players and public gaming events at shopping centres on behalf of HobbyGames, with an estimated footfall of 60–120 visitors over six hours. I hosted gaming sessions for groups of 2–10 both independently and as part of a team, ran a regular D&D campaign for six months, and helped organize large-scale tabletop role-playing events.'
+        'Professional experience at MP-Technologies Group: August 2024 — November 2026. Since early 2025, the role has also covered content marketing, analytical products, R&D, and internal operations.',
+        'Project management in B2B equipment and packaging: requirements gathering, expert and contributor coordination, stage planning, timeline and approval control, and preparation of final deliverables. Parallel workload: 4–5 projects; cross-functional teams: up to 15 people.',
+        'Operational scope: administrative and technical support for the Kaliningrad head office. Administration of Bitrix24, Yandex Disk, and Yandex Mail; user account creation, access permissions, data backups, workstation support, office equipment, local network, and corporate telecom.',
+        'Outside work: fiction and book collecting, strategy board games, wargames, and tabletop role-playing games. Event organization includes tournaments for 8–10 players and HobbyGames gaming weekends at a shopping centre, with visitor flow of 60–120 people over six hours. Hosting sessions for groups of 2–10, independently and as part of a team; running a regular D&D campaign for six months; organizing large-scale tabletop role-playing events.'
       ],
       educationTitle: 'Education',
       education: [
@@ -503,13 +502,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Sales Manager',
         ],
         description:
-          'Led the development of three analytical trendbooks: owned the analytical content, collected expert input, coordinated the team, and delivered completed sections to the CEO in stages.',
+          'Management of three analytical trendbooks: authorship of the analytical content, expert input collection, team coordination, presentation assembly, and phased delivery of completed sections to the CEO.',
         result:
-          'Delivered three analytical products. Presented each release to internal audiences of 30–50 people and organized previews of early versions for external audiences.',
+          'Three completed analytical trendbooks; internal presentations for 30–50 attendees after each release, plus previews of early versions for external audiences.',
         achievements: [
-          'Authored the main analytical section, assembled the master presentation, and handed it over to designers.',
-          'Collected expert materials and feedback from technologists, product specialists, marketing, and sales.',
-          'Aligned materials with the Marketing Director, tracked deadlines, and coordinated phased delivery to the CEO.',
+          'Authorship of the main analytical section, assembly of the master presentation, and handoff of materials to designers.',
+          'Collection of expert materials and feedback from technologists, product specialists, marketing, and sales.',
+          'Material alignment with the Marketing Director, deadline control, and phased delivery to the CEO.',
         ],
         tools: ['Bitrix24', 'Figma', 'Presentations', 'Expert Interviews'],
       },
@@ -522,9 +521,9 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         role: 'Working Prototype Developer',
         detailsTitle: 'Implemented features by user role',
         description:
-          'Developed a working prototype of a service management information system as part of my diploma project. I also supported the prototype demonstration remotely during the APM 2025 exhibition.',
+          'Development of a working prototype for a service management information system as a diploma project; remote support for the product demonstration at APM 2025.',
         result:
-          'The working prototype covers core workflows for five roles: customer, service engineer, service manager, executive, and administrator.',
+          'One working prototype with functional workflows for five roles: customer, service engineer, service manager, executive, and administrator.',
         achievements: [
           'Customer: registration, equipment management, service request creation and tracking, comments, service history, maintenance calendar, equipment documentation, and spare-parts orders.',
           'Service engineer: assigned requests, status updates, records of completed work and used parts, request completion by the responsible engineer, and work schedule.',
@@ -544,12 +543,12 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         teamSize: '4–5 people',
         team: ['Designer', 'Marketing Director', 'Sales Manager', 'PM support as needed'],
         description:
-          'Managed the rebranding project from the initial brief to the final client presentation. Coordinated the logo, packaging, and retail display work, while maintaining direct communication with the client.',
+          'End-to-end project management for the rebranding, from the initial brief to the final client presentation: coordination of logo, packaging, and retail display development, with direct client communication.',
         result:
-          'Delivered in 3–4 weeks. The client has started publishing the developed materials on Instagram and is pursuing patent protection for the work.',
+          'A complete set of logo, packaging, and retail display materials delivered within 3–4 weeks; the client uses the work in Instagram publications and is pursuing patent protection.',
         achievements: [
-          'Acted as the lead PM throughout the project: planned the work, coordinated contributors, and tracked deadlines.',
-          'Managed client communication, intermediate approvals, and the final presentation.',
+          'End-to-end PM responsibilities: work planning, contributor coordination, and timeline control throughout the project.',
+          'Client communication, intermediate approvals, and preparation and delivery of the final presentation.',
         ],
         tools: ['Bitrix24', 'Figma', 'Client Meetings', 'Presentations'],
       },
@@ -562,13 +561,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         role: 'Project Manager / Research Coordinator',
         teamSize: '3–4 people',
         description:
-          'Coordinated two parallel product-preservation experiments: testing in a thermostat and shelf storage in the company’s packaging.',
+          'Coordination of two parallel product-preservation experiments: thermostat testing and shelf storage in the company’s packaging.',
         result:
-          'During the shelf-storage experiment, laboratory checks found no signs of spoilage throughout the observation period. The result confirmed findings from the earlier stage.',
+          'Six product checks over 1.5 years. Laboratory checks during the shelf-storage stage found no signs of spoilage, confirming the findings of the earlier stage.',
         achievements: [
-          'Organized six product checks throughout the experiment.',
-          'Prepared technical instructions for a branch assistant, the inspection schedule, and batch-tracking process.',
-          'Coordinated sample transfers and receipt of laboratory results.',
+          'Planning and coordination of six product checks throughout the experiment.',
+          'Preparation of technical instructions for the branch assistant, inspection schedule, and batch-tracking process.',
+          'Coordination of sample transfers and laboratory result collection.',
         ],
         tools: ['Bitrix24', 'Excel', 'Google Sheets', 'Laboratory Reports'],
       },
@@ -581,13 +580,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         role: 'Project Manager / Prototyper',
         teamSize: '3–4 people',
         description:
-          'Contributed to the PACK-5 digital showcase as part of pack-5.ru. Coordinated an external web developer, helped define requirements, and prototyped interface concepts in Figma.',
+          'Coordination of the PACK-5 digital showcase on pack-5.ru: collaboration with an external web developer, requirements definition, and interface prototyping in Figma.',
         result:
-          'The digital showcase was launched. At the APM trade show, around 100 visitors took part in the survey; 30–40 completed the detailed questionnaire.',
+          'Launch of the PACK-5 digital showcase; Figma prototype of the packaging solutions calculator; APM user feedback collection, including 30–40 completed detailed questionnaires.',
         achievements: [
-          'Designed an interactive Figma prototype of a packaging solutions calculator.',
-          'Coordinated the external web developer and prepared materials for the digital showcase.',
-          'Organized feedback collection from trade show visitors.',
+          'Design of an interactive Figma prototype for a packaging solutions calculator.',
+          'Coordination of the external web developer and preparation of materials for the digital showcase.',
+          'Organization and structuring of feedback from trade show visitors.',
         ],
         tools: ['Figma', 'Bitrix24', 'Web Requirements', 'Surveys'],
         media: [
@@ -601,16 +600,15 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         period: '2024 — 2026',
         role: 'Project Operations / IT Support',
         description:
-          'Provided administrative and technical support for the Kaliningrad head office, which had approximately 30–50 employees. Supported corporate services, workstations, office equipment, and the local network.',
+          'Administrative and technical support for the Kaliningrad head office: corporate services, workstations, office equipment, and local network support.',
         result:
-          'Maintained office workstations and corporate services, responding to technical incidents to help reduce employee downtime.',
+          'Timely resolution of technical incidents and restoration of workstation and corporate service availability.',
         achievements: [
-          'Administered Yandex Disk and Yandex Mail: created accounts, configured access permissions, backed up Disk data, monitored incoming mail, and organized correspondence distribution.',
-          'Supported approximately 25 corporate SIM cards: prepared agreements, service documents, and requests; ordered and registered SIM cards; coordinated issues with Beeline and accounting.',
-          'Supported office PCs, laptops, printers, and the local network: configured workstations, installed software, arranged access, diagnosed and resolved technical issues.',
-          'Participated in office equipment selection, justified procurement needs, and presented budget requests.',
-          'Created employee accounts and configured access to corporate services.',
-        ],
+          'Administration of Yandex Disk and Yandex Mail: account creation, access permissions, data backups, incoming mail monitoring, and correspondence distribution.',
+          'Corporate telecom administration: agreements, service documents, and requests; SIM card ordering and registration; coordination with Beeline and accounting.',
+          'Full support for office PCs, laptops, printers, and the local network: workstation setup, software installation, access configuration, diagnostics, and troubleshooting.',
+          'Office equipment selection, procurement justification, and budget approval.',
+                  ],
         tools: ['Bitrix24', 'Yandex Disk', 'Yandex Mail', 'Beeline', 'Windows', 'IT Support'],
       },
       {
@@ -620,13 +618,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         period: 'Internal project',
         role: 'Process Design Contributor / Bitrix24 Administrator',
         description:
-          'Worked with a colleague to map deal scenarios in Draw.io, covering different factory configurations and the sequence of actions from equipment sales to production. Based on the agreed process logic, an external specialist configured two automated funnels in Bitrix24.',
+          'Process design in Draw.io for equipment sales-to-production workflows, including different factory scenarios and action sequences. The agreed process logic forms the basis of two automated Bitrix24 funnels; technical configuration is handled by an external specialist.',
         result:
-          'The funnels displayed the current deal stage, responsible employee, and next required action. The process logic was reviewed by the CEO.',
+          'Two automated “Sales → Production” funnels in Bitrix24, with a visible deal stage, responsible employee, and next action at each stage; process logic approved by the CEO.',
         achievements: [
-          'Mapped deal scenarios and process steps in Draw.io.',
-          'Provided the agreed process logic to an external specialist for Bitrix24 automation setup.',
-          'Administered the completed funnels with a colleague and trained new employees to use them and Bitrix24.',
+          'Deal scenario mapping and process-step design in Draw.io.',
+          'Preparation and handoff of approved process logic to an external specialist for Bitrix24 automation setup.',
+          'Joint administration of the completed funnels and training for new employees on Bitrix24 and funnel workflows.',
         ],
         tools: ['Draw.io', 'Bitrix24', 'Employee Training'],
       },
@@ -637,12 +635,12 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         period: '2025 — 2026',
         role: 'Content Marketer / Video Producer',
         description:
-          'Prepared content, participated in filming and editing, and promoted company products across video platforms.',
+          'Video content production for company products: content preparation, filming coordination, editing, and publication across video platforms.',
         result:
-          'YouTube views increased from approximately 84k to 160k. Total video views across platforms reached around 350k–400k over a year.',
+          '350k–400k video views across platforms in one year; YouTube watch time increased by 99% to 410 hours.',
         achievements: [
-          'Increased YouTube watch time by 99%, reaching 410 hours.',
-          'Produced and managed video content for YouTube and other company platforms.',
+          'YouTube watch time growth of 99%, reaching 410 hours.',
+          'Video content production and adaptation for YouTube and other company platforms.',
         ],
         tools: ['YouTube', 'CapCut', 'Photoshop', 'Video Production'],
       },
@@ -653,12 +651,12 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         period: '2025 — 2026',
         role: 'Email Marketer',
         description:
-          'Managed regular email campaigns, segmented the customer database, conducted surveys, and analyzed audience responses.',
+          'Email marketing: regular campaign planning, customer database segmentation, surveys, and audience response analysis.',
         result:
-          'Open Rate increased from below 10% to approximately 15%; email reads rose by 50%, while link clicks nearly doubled.',
+          'Open Rate growth from a baseline below 10%; email reads increased by 50%; link clicks also increased.',
         achievements: [
-          'Worked with a segmented database of approximately 16,000 contacts.',
-          'Created newsletter structures and templates in Tilda.',
+          'Customer database segmentation and management of regular email communications.',
+          'Development of newsletter structures and templates in Tilda.',
         ],
         tools: ['Email Marketing', 'Tilda', 'Excel', 'Analytics'],
       },
@@ -669,11 +667,11 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         period: '2025 — 2026',
         role: 'Content Marketer',
         description:
-          'Managed company social channels, prepared SEO materials for the website, and supported lead generation at industry trade shows.',
-        result: 'Generated approximately 40 targeted leads at a trade show during the second month of the role.',
+          'Management of company social channels, preparation of website SEO content, and support for lead generation at industry trade shows.',
+        result: 'Targeted enquiries from an industry trade show during the second month in the role; ongoing social media and SEO content activity.',
         achievements: [
-          'Managed the company Telegram channel and Instagram account.',
-          'Wrote SEO articles and selected keywords and meta descriptions.',
+          'Management of the company Telegram channel and Instagram account.',
+          'SEO article preparation, keyword selection, and meta description writing.',
         ],
         tools: ['Telegram', 'Instagram', 'SEO', 'Copywriting', 'Trade Shows'],
       },
@@ -685,11 +683,11 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         role: 'PM / Lead 3D Generalist / Community Manager',
         teamSize: '5 people',
         description:
-          'Contributed to a game server on the Crystalix platform, created 3D content for YouTube creators, and coordinated a small team.',
-        result: 'Peak server concurrency reached around 300 players; videos featuring created models received 20k–31k views.',
+          'Game server development on the Crystalix platform, 3D content creation for YouTube creators, and team coordination.',
+        result: 'Videos featuring created 3D models: 20k–31k views; the project’s VK community: 715 members.',
         achievements: [
-          'Created hundreds of 3D models in Blockbench and Blender for assets, environments, and five game eras.',
-          'Coordinated a five-person team and managed project communities: VK — 715 members, plus Discord and Telegram.',
+          'Creation of hundreds of 3D models in Blockbench and Blender for assets, environments, and five game eras.',
+          'Coordination of a five-person team and management of the project communities across VK, Discord, and Telegram.',
         ],
         tools: ['Blender', 'Blockbench', 'Photoshop', 'Unity (C#)', 'Trello', 'Discord', 'VK / Telegram'],
       },
@@ -700,13 +698,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         period: 'During my time at MP-Technologies',
         role: '3D Modeling & Visualization',
         description:
-          'Created Blender visualizations of industrial production lines. Independently modeled individual equipment units based on technical drawings and photographs, checked them against real equipment, and assembled them into lines with different scales and configurations.',
+          'Industrial production line visualization in Blender: independent modeling of equipment units from technical drawings and photographs, comparison with real machinery, and assembly of lines with different scales and configurations.',
         result:
-          'Created approximately 10 production line layouts with different scales and configurations.',
+          '3D layouts of production lines in different scales and configurations, assembled from independently modeled equipment units.',
         achievements: [
-          'Modeled equipment based on drawings, photographs, and visual examination of real machinery.',
-          'Assembled individual models into production line layouts.',
-          'Prepared line variations with different scales and configurations.',
+          'Independent equipment modeling based on technical drawings, photographs, and visual examination of real machinery.',
+          'Assembly of individual models into production line layouts.',
+          'Preparation of layout variations with different scales and configurations.',
         ],
         tools: ['Blender', '3D Modeling', 'Industrial Visualization'],
       },
