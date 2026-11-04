@@ -335,7 +335,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       subtitle:
         'I manage B2B projects from initial requirements to delivery: analytics, R&D research, packaging solutions, and digital products. I coordinate cross-functional teams, timelines, and approvals.',
       cta: 'Message on Telegram',
-      resumeLabel: 'Resume (PDF)',
+      resumeLabel: 'Resume (Russian PDF)',
       stats: [
         { value: '4–5', label: 'projects handled in parallel' },
         { value: 'up to 15', label: 'members in a cross-functional team' },

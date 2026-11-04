@@ -583,7 +583,13 @@ export default function App() {
             </div>
             <div className="flex flex-wrap gap-3">
               <a href={`https://t.me/${content.contacts.telegram}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#d5ad6c] px-5 py-3 text-[10px] font-bold text-[#11151a] transition hover:bg-[#e6c486]">Telegram <ArrowUpRight /></a>
-              <a href={`mailto:${content.contacts.email}`} className="inline-flex items-center gap-2 rounded-full border border-[#555e65] px-5 py-3 text-[10px] font-semibold text-[#d9d7d1] transition hover:border-[#b99a69]">Email <ArrowUpRight /></a>
+              <a
+                href={`mailto:${content.contacts.email}`}
+                className="inline-flex items-center gap-2 rounded-full border border-[#555e65] px-5 py-3 text-[10px] font-semibold text-[#d9d7d1] transition hover:border-[#b99a69]"
+              >
+                {content.contacts.email}
+                <ArrowUpRight />
+              </a>
             </div>
           </div>
           <div className="flex flex-col gap-2 border-t border-[#343b40] px-6 py-4 text-[9px] text-[#6f7b83] sm:flex-row sm:items-center sm:justify-between md:px-9">
