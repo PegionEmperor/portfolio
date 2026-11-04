@@ -140,26 +140,6 @@ function ArrowUpRight() {
   );
 }
 
-function SectionHeading({
-  eyebrow,
-  title,
-  note,
-}: {
-  eyebrow: string;
-  title: string;
-  note?: string;
-}) {
-  return (
-    <div className="mb-6 flex flex-col gap-2 border-b border-[#2b3137] pb-4">
-      <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.24em] text-[#b99a69]">{eyebrow}</p>
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-        <h2 className="text-xl font-semibold tracking-tight text-[#efede8] md:text-2xl">{title}</h2>
-        {note && <p className="max-w-sm text-[11px] leading-relaxed text-[#7e8991] sm:text-right">{note}</p>}
-      </div>
-    </div>
-  );
-}
-
 function ImagePlaceholder({
   project,
   lang,
