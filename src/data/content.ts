@@ -14,7 +14,15 @@ export interface Project {
   isNda?: boolean;
 }
 
-export const PORTFOLIO_DATA = {
+export interface ContentSection {
+  hero: {
+    title: string;
+    subtitle: string;
+  };
+  projects: Project[];
+}
+
+export const PORTFOLIO_DATA: Record<Lang, Record<Role, ContentSection>> = {
   ru: {
     pm: {
       hero: {

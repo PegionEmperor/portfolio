@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PORTFOLIO_DATA, Role, Lang } from './data/content';
+import { PORTFOLIO_DATA, type Role, type Lang } from './data/content';
 
 export default function App() {
   const [role, setRole] = useState<Role>('pm');
