@@ -37,9 +37,9 @@ export default function App() {
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto">
+      <main className="max-w-5xl mx-auto space-y-16">
         {/* Hero Section */}
-        <section className="mb-12">
+        <section>
           <h1 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
             {currentContent.hero.title}
           </h1>
@@ -48,27 +48,63 @@ export default function App() {
           </p>
         </section>
 
-        {/* Фильтры категорий */}
-        <section className="mb-10">
-          <div className="flex flex-wrap gap-2">
-            {(Object.keys(currentContent.categories) as Category[]).map((catKey) => (
-              <button
-                key={catKey}
-                onClick={() => setActiveCategory(catKey)}
-                className={`px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition border ${
-                  activeCategory === catKey
-                    ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg shadow-indigo-600/30'
-                    : 'bg-slate-800/80 border-slate-700 text-slate-400 hover:text-slate-200 hover:border-slate-600'
-                }`}
-              >
-                {currentContent.categories[catKey]}
-              </button>
+        {/* Блок "Обо мне", образование и навыки */}
+        <section className="bg-slate-800/40 border border-slate-800 p-6 md:p-8 rounded-2xl grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="md:col-span-2 space-y-4">
+            <h2 className="text-2xl font-bold text-slate-100">{currentContent.about.title}</h2>
+            {currentContent.about.text.map((paragraph, idx) => (
+              <p key={idx} className="text-sm text-slate-300 leading-relaxed">
+                {paragraph}
+              </p>
             ))}
+            
+            <div className="pt-4">
+              <h3 className="text-sm font-semibold text-indigo-400 mb-3">{currentContent.about.educationTitle}</h3>
+              <div className="space-y-3">
+                {currentContent.about.education.map((edu, idx) => (
+                  <div key={idx} className="border-l-2 border-indigo-500/50 pl-3">
+                    <p className="text-xs font-bold text-slate-200">{edu.degree}</p>
+                    <p className="text-xs text-slate-400">{edu.school} ({edu.years})</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-3 border-t md:border-t-0 md:border-l border-slate-800 pt-6 md:pt-0 md:pl-8">
+            <h3 className="text-sm font-semibold text-indigo-400">{currentContent.about.skillsTitle}</h3>
+            <ul className="space-y-2">
+              {currentContent.about.skills.map((skill, idx) => (
+                <li key={idx} className="text-xs text-slate-300 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                  {skill}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
-        {/* Сетка проектов */}
+        {/* Раздел проектов и фильтры */}
         <section>
+          <div className="mb-8">
+            <div className="flex flex-wrap gap-2">
+              {(Object.keys(currentContent.categories) as Category[]).map((catKey) => (
+                <button
+                  key={catKey}
+                  onClick={() => setActiveCategory(catKey)}
+                  className={`px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition border ${
+                    activeCategory === catKey
+                      ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg shadow-indigo-600/30'
+                      : 'bg-slate-800/80 border-slate-700 text-slate-400 hover:text-slate-200 hover:border-slate-600'
+                  }`}
+                >
+                  {currentContent.categories[catKey]}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Сетка проектов */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {filteredProjects.map((project) => (
               <div 
