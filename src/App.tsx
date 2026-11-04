@@ -7,6 +7,18 @@ import {
   type ProjectMedia,
 } from './data/content';
 
+const assetUrl = (path: string): string => {
+  if (
+    /^(?:[a-z]+:)?\/\//i.test(path) ||
+    path.startsWith('data:') ||
+    path.startsWith('blob:')
+  ) {
+    return path;
+  }
+
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+};
+
 const SECONDARY_CATEGORIES: ProjectCategory[] = ['pm', 'marketing', 'gamedev'];
 
 const VISUAL_COPY: Record<string, { ru: { tag: string; title: string; note: string }; en: { tag: string; title: string; note: string } }> = {
@@ -274,7 +286,7 @@ function MediaImage({
 
   return (
     <img
-      src={item.url}
+      src={assetUrl(item.url)}
       alt={item.caption || title}
       loading="lazy"
       onError={() => setFailed(true)}
@@ -311,12 +323,12 @@ function MediaVideo({
       controls
       playsInline
       preload="metadata"
-      poster={item.poster}
+      poster={item.poster ? assetUrl(item.poster) : undefined}
       aria-label={item.caption || title}
       onError={() => setFailed(true)}
       className="aspect-[4/3] w-full bg-[#050708] object-contain"
     >
-      <source src={item.url} />
+      <source src={assetUrl(item.url)} />
       {lang === 'ru' ? 'Ваш браузер не поддерживает видео.' : 'Your browser does not support video.'}
     </video>
   );
@@ -598,7 +610,7 @@ export default function App() {
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M21.6 4.4 18.4 19c-.2 1- .8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.8.4l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L6.9 13.3l-4.5-1.4c-1-.3-1-1 .2-1.5L20 4.1c.8-.3 1.9.2 1.6.3Z" /></svg>
                 {content.hero.cta}<ArrowUpRight />
               </a>
-              <a href={content.contacts.resumeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-[#555e65] bg-[#11161b] px-6 py-3 text-sm font-semibold text-[#e2e0da] transition hover:border-[#b99a69] hover:text-[#e3c28e]">
+              <a href={assetUrl(content.contacts.resumeUrl)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-[#555e65] bg-[#11161b] px-6 py-3 text-sm font-semibold text-[#e2e0da] transition hover:border-[#b99a69] hover:text-[#e3c28e]">
                 <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M5 2.8h7l3 3V17H5zM12 2.8v3h3M7.5 10h5M7.5 13h5" /></svg>
                 {content.hero.resumeLabel}<span aria-hidden="true">↓</span>
               </a>
