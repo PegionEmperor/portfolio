@@ -16,6 +16,7 @@ export interface Project {
   role: string;
   teamSize?: string;
   team?: string[];
+  detailsTitle?: string;
   description: string;
   result: string;
   achievements: string[];
@@ -65,9 +66,9 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
   ru: {
     nav: { cases: 'Кейсы', process: 'Подход', about: 'Обо мне', contact: 'Контакты' },
     hero: {
-      title: 'Project Manager',
+      title: 'Project Manager / Operations Manager',
       subtitle:
-        'Управляю B2B-проектами от постановки задачи до сдачи результата: аналитика, R&D-исследования, упаковочные решения и цифровые продукты. Координирую кросс-функциональные команды, сроки и согласования.',
+        'Организую проектную и операционную работу: от описания процессов и планирования до координации команды, контроля исполнения и сдачи результата. Опыт в B2B-оборудовании, сервисных продуктах и кросс-функциональных проектах.',
       cta: 'Написать в Telegram',
       resumeLabel: 'Резюме (PDF)',
       stats: [
@@ -116,9 +117,10 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
     about: {
       title: 'Обо мне',
       text: [
-        'Работал в ГК «МП-Технологии» с августа 2024 по ноябрь 2026 года. Начинал с проектных задач; примерно с начала 2025 года моя зона ответственности расширилась на контент-маркетинг, аналитические продукты, R&D и координацию внутренних процессов.',
+        'Работал в ГК «МП-Технологии» с августа 2024 по ноябрь 2026 года. Начинал с проектных задач; примерно с начала 2025 года зона ответственности расширилась на контент-маркетинг, аналитические продукты, R&D и координацию внутренних процессов.',
         'Вёл проекты в сфере B2B-оборудования и упаковки: собирал требования, координировал экспертов и исполнителей, контролировал сроки, согласования и подготовку итоговых материалов. Обычно одновременно в работе находилось 4–5 проектов; в отдельных командах участвовало до 15 человек.',
-        'Дополнительно систематизировал работу с задачами в Bitrix24, создал структуру облачного хранения с настройкой доступов и резервным копированием существующих материалов. Использую Figma, инструменты контент-маркетинга и ИИ.',
+        'Также обеспечивал операционную и техническую поддержку главного офиса в Калининграде, где работало ориентировочно 30–50 человек. Администрировал Bitrix24, Яндекс Диск и Яндекс Почту, создавал учётные записи, настраивал доступы, резервировал данные, сопровождал рабочие места и корпоративную связь — около 25 SIM-карт.',
+        'Вне работы читаю художественную литературу и коллекционирую книги, увлекаюсь стратегическими настольными играми, варгеймами и НРИ. Организовывал турниры на 8–10 участников и игровые выходные в ТЦ от лица HobbyGames: ориентировочная проходимость площадки составляла 60–120 посетителей за шесть часов. Проводил игровые встречи для групп от 2 до 10 человек самостоятельно и в составе команды, вёл регулярную кампанию D&D на протяжении полугода, участвовал в организации масштабных НРИ-игр.'
       ],
       educationTitle: 'Образование',
       education: [
@@ -127,12 +129,14 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       ],
       skillsTitle: 'Ключевые навыки',
       skills: [
-        'Project Management: постановка задач, планирование, координация, контроль сроков',
-        'Bitrix24, Trello; основы Agile',
+        'Project Management: постановка задач, планирование, координация и контроль сроков',
+        'Operations Management и сопровождение офисной инфраструктуры',
+        'Bitrix24: администрирование, сопровождение воронок и обучение сотрудников',
+        'Картирование бизнес-процессов и сценариев в Draw.io',
+        'Яндекс Диск и Яндекс Почта: учётные записи, доступы и резервное копирование',
         'Сбор требований, подготовка ТЗ и согласование результатов',
         'Координация R&D и продуктовая аналитика',
-        'Прототипирование интерфейсов в Figma',
-        'Контент-маркетинг: видео, email, SMM и SEO',
+        'Прототипирование интерфейсов в Figma; 3D-визуализация в Blender',
         'ИИ-инструменты, LLM, Prompting и внутреннее обучение',
         'Английский язык (B1–B2)',
       ],
@@ -141,7 +145,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       name: 'Данил Яковенко',
       location: 'Калининград / Удалённо',
       telegram: 'DanilWorkProfile',
-      email: 'vip.danl.yakovenko@mail.ru',
+      email: 'vip.danl.yakovenko@gmail.com',
       resumeUrl: '/resume-ru.pdf',
     },
     projects: [
@@ -176,6 +180,27 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         ],
         tools: ['Bitrix24', 'Figma', 'Презентации', 'Экспертные интервью'],
         media: [{ type: 'image', url: '/assets/trendbook-1.webp', caption: 'Фрагмент аналитического трендбука. Публиковать только после проверки и необратимого скрытия NDA-данных.' }],
+      },
+      {
+        id: 'service-app',
+        category: 'pm',
+        featured: true,
+        title: 'Сервисное приложение: рабочий прототип АИС',
+        period: 'Дипломный проект · АПМ 2025',
+        role: 'Автор и разработчик рабочего прототипа',
+        detailsTitle: 'Реализованные функции по ролям',
+        description:
+          'Разработал рабочий прототип информационной системы сервисного обслуживания. Проект стал темой дипломной работы; также дистанционно участвовал в демонстрации прототипа на выставке АПМ 2025.',
+        result:
+          'Рабочий прототип охватывает основные сценарии пяти ролей: клиента, сервисного инженера, сервисного менеджера, руководителя и администратора.',
+        achievements: [
+          'Клиент: регистрация, добавление оборудования, создание и отслеживание заявок, комментарии, история обслуживания, календарь ТО, доступ к документации и заказ запасных частей.',
+          'Сервисный инженер: просмотр назначенных заявок, смена статусов, внесение записей о выполненных работах и использованных запчастях, завершение заявки ответственным инженером и просмотр графика работ.',
+          'Сервисный менеджер: приём и назначение заявок, ведение оборудования клиентов, подтверждение и выдача заказов запчастей, учёт склада, ведение каталогов моделей, документов и запчастей.',
+          'Руководитель: дашборд показателей, настройка нормативов SLA и ставок трудозатрат, отчёты, а также права менеджера по заявкам и заказам запасных частей.',
+          'Администратор: создание и блокировка пользователей, оформление увольнения, сброс паролей, назначение ролей и ведение каталога.',
+        ],
+        tools: ['Сервисные процессы', 'Проектирование ролей', 'Рабочий прототип'],
       },
       {
         id: 'kita-rebranding',
@@ -248,19 +273,38 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       {
         id: 'process-b24-infra',
         category: 'pm',
-        title: 'Систематизация процессов и корпоративная IT-поддержка',
+        title: 'Корпоративные операции и IT-поддержка',
         period: '2024 — 2026',
         role: 'Project Operations / IT Support',
         description:
-          'Переводил рабочие процессы в Bitrix24 и организовывал единый подход к хранению корпоративных материалов. Дополнительно решал административные и технические вопросы сотрудников.',
+          'Обеспечивал административную и техническую поддержку главного офиса в Калининграде, где работало ориентировочно 30–50 сотрудников. Сопровождал корпоративные сервисы, рабочие места, офисную технику и локальную сеть.',
         result:
-          'Настроена рабочая система задач и хранения материалов, поддерживавшая параллельную работу над 4–5 проектами.',
+          'Поддерживал работоспособность корпоративных сервисов и рабочих мест; при инцидентах занимался оперативным решением проблем, чтобы сократить простой сотрудников.',
         achievements: [
-          'Создал структуру облачных папок, настроил права доступа и подготовил резервные копии существующих материалов.',
-          'Зарегистрировал новый договор корпоративной связи, администрировал SIM-карты, взаимодействовал с менеджерами и вёл документацию.',
-          'Настраивал ноутбуки и учётные записи, помогал сотрудникам решать возникавшие технические вопросы.',
+          'Администрировал Яндекс Диск и Яндекс Почту: создавал учётные записи, настраивал права доступа, резервировал данные Диска, контролировал поступление и распределение входящей корреспонденции.',
+          'Сопровождал около 25 корпоративных SIM-карт: оформлял договоры, акты и запросы, заказывал и регистрировал SIM-карты, решал вопросы с менеджером Билайн и бухгалтерией.',
+          'Обеспечивал поддержку компьютеров, ноутбуков, принтеров и офисной сети: настраивал рабочие места, устанавливал программное обеспечение, предоставлял доступы, диагностировал и устранял неисправности.',
+          'Участвовал в выборе офисной техники, обосновывал закупки и защищал бюджет.',
+          'Создавал учётные записи и настраивал доступы сотрудников к корпоративным сервисам.',
         ],
-        tools: ['Bitrix24', 'Cloud Storage', 'Корпоративная связь', 'IT Support'],
+        tools: ['Bitrix24', 'Яндекс Диск', 'Яндекс Почта', 'Билайн', 'Windows', 'IT Support'],
+      },
+      {
+        id: 'bitrix24-sales-funnels',
+        category: 'pm',
+        title: 'Проектирование воронок продаж в Bitrix24',
+        period: 'Внутренний проект',
+        role: 'Участник проектирования процессов / администратор Bitrix24',
+        description:
+          'Совместно с коллегой прорабатывал в Draw.io сценарии прохождения сделки от продажи оборудования до производства с учётом разных вариантов заводов и последовательности действий. На основе согласованной логики внешний специалист настроил в Bitrix24 две автоматизированные воронки.',
+        result:
+          'Воронки показывали текущий этап сделки, ответственного сотрудника и следующее необходимое действие. Логика процессов проходила проверку CEO.',
+        achievements: [
+          'Моделировал сценарии прохождения сделки и последовательность действий в Draw.io.',
+          'Передавал согласованную логику внешнему специалисту для настройки автоматизаций в Bitrix24.',
+          'Администрировал готовые воронки совместно с коллегой и обучал новых сотрудников работе с ними и Bitrix24.',
+        ],
+        tools: ['Draw.io', 'Bitrix24', 'Обучение сотрудников'],
       },
       {
         id: 'youtube-video-growth',
@@ -326,14 +370,31 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         tools: ['Blender', 'Blockbench', 'Photoshop', 'Unity (C#)', 'Trello', 'Discord', 'VK / Telegram'],
         media: [{ type: 'image', url: '/assets/gamedev-raft-1.webp', caption: '3D-модели и игровые объекты для Crystalix' }],
       },
+      {
+        id: 'industrial-3d-lines',
+        category: 'gamedev',
+        title: 'Промышленная 3D-визуализация производственных линий',
+        period: 'В период работы в МП-Технологии',
+        role: '3D-моделирование и визуализация',
+        description:
+          'Создавал в Blender 3D-визуализации производственных линий. Самостоятельно моделировал отдельные единицы оборудования по чертежам и фотографиям, сверял модели с реальным оборудованием и собирал из них линии разных масштабов и конфигураций.',
+        result:
+          'Подготовил около 10 вариантов производственных линий разного масштаба и конфигурации.',
+        achievements: [
+          'Моделировал отдельные единицы оборудования на основе чертежей, фотографий и визуального изучения реальных образцов.',
+          'Собирал отдельные модели в компоновки производственных линий.',
+          'Создавал варианты линий с разными масштабами и конфигурациями.',
+        ],
+        tools: ['Blender', '3D-моделирование', 'Промышленная визуализация'],
+      },
     ],
   },
   en: {
     nav: { cases: 'Cases', process: 'Approach', about: 'About', contact: 'Contact' },
     hero: {
-      title: 'Project Manager',
+      title: 'Project Manager / Operations Manager',
       subtitle:
-        'I manage B2B projects from initial requirements to delivery: analytics, R&D research, packaging solutions, and digital products. I coordinate cross-functional teams, timelines, and approvals.',
+        'I organize project and operational work — from process mapping and planning to team coordination, execution control, and delivery. My experience includes B2B equipment, service products, and cross-functional projects.',
       cta: 'Message on Telegram',
       resumeLabel: 'Resume (Russian PDF)',
       stats: [
@@ -384,7 +445,8 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       text: [
         'Worked at MP-Technologies Group from August 2024 to November 2026. I started with project coordination tasks; around early 2025, my responsibilities expanded to content marketing, analytical products, R&D, and internal operations.',
         'Managed projects in B2B equipment and packaging: gathered requirements, coordinated experts and contributors, tracked timelines and approvals, and prepared final deliverables. Typically, 4–5 projects were in progress in parallel; selected cross-functional teams included up to 15 people.',
-        'I also systematized task management in Bitrix24 and created a cloud storage structure with access permissions and backups of existing materials. I use Figma, content marketing tools, and AI applications.',
+        'I also provided administrative and technical support for the Kaliningrad head office, which had approximately 30–50 employees. I administered Bitrix24, Yandex Disk, and Yandex Mail, created user accounts, configured access, backed up Disk data, supported workstations, and managed corporate telecom services covering around 25 SIM cards.',
+        'Outside work, I read fiction and collect books. I enjoy strategy board games, wargames, and tabletop role-playing games. I organized tournaments for 8–10 players and public gaming events at shopping centres on behalf of HobbyGames, with an estimated footfall of 60–120 visitors over six hours. I hosted gaming sessions for groups of 2–10 both independently and as part of a team, ran a regular D&D campaign for six months, and helped organize large-scale tabletop role-playing events.'
       ],
       educationTitle: 'Education',
       education: [
@@ -394,11 +456,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       skillsTitle: 'Core Skills',
       skills: [
         'Project management: task definition, planning, coordination, and timeline control',
-        'Bitrix24, Trello; Agile fundamentals',
+        'Operations management and office IT support',
+        'Bitrix24 administration, sales funnels, and employee onboarding',
+        'Business process mapping in Draw.io',
+        'Yandex Disk and Yandex Mail administration',
         'Requirements gathering, technical briefs, and approvals',
         'R&D coordination and product analytics',
-        'UI prototyping in Figma',
-        'Content marketing: video, email, SMM, and SEO',
+        'Figma prototyping and Blender 3D visualization',
         'AI tools, LLMs, prompting, and internal training',
         'English (B1–B2)',
       ],
@@ -407,8 +471,8 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       name: 'Danil Yakovenko',
       location: 'Kaliningrad / Remote',
       telegram: 'DanilWorkProfile',
-      email: 'vip.danl.yakovenko@mail.ru',
-      resumeUrl: '/resume-en.pdf',
+      email: 'vip.danl.yakovenko@gmail.com',
+      resumeUrl: '/resume-ru.pdf',
     },
     projects: [
       {
@@ -442,6 +506,27 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         ],
         tools: ['Bitrix24', 'Figma', 'Presentations', 'Expert Interviews'],
         media: [{ type: 'image', url: '/assets/trendbook-1.webp', caption: 'Trendbook excerpt. Publish only after checking permissions and irreversibly removing confidential information.' }],
+      },
+      {
+        id: 'service-app',
+        category: 'pm',
+        featured: true,
+        title: 'Service Application: Working Prototype',
+        period: 'Diploma Project · APM 2025',
+        role: 'Working Prototype Developer',
+        detailsTitle: 'Implemented features by user role',
+        description:
+          'Developed a working prototype of a service management information system as part of my diploma project. I also supported the prototype demonstration remotely during the APM 2025 exhibition.',
+        result:
+          'The working prototype covers core workflows for five roles: customer, service engineer, service manager, executive, and administrator.',
+        achievements: [
+          'Customer: registration, equipment management, service request creation and tracking, comments, service history, maintenance calendar, equipment documentation, and spare-parts orders.',
+          'Service engineer: assigned requests, status updates, records of completed work and used parts, request completion by the responsible engineer, and work schedule.',
+          'Service manager: request intake and assignment, customer equipment records, spare-parts order approval and issuing, stock accounting, and catalogues of models, documents, and spare parts.',
+          'Executive: KPI dashboard, SLA and labour-rate settings, reports, and manager-level permissions for service requests and spare-parts orders.',
+          'Administrator: user creation, blocking, offboarding, password resets, role assignment, and catalogue maintenance.',
+        ],
+        tools: ['Service Workflow Design', 'Role-Based Workflows', 'Working Prototype'],
       },
       {
         id: 'kita-rebranding',
@@ -509,19 +594,38 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       {
         id: 'process-b24-infra',
         category: 'pm',
-        title: 'Workflow Systematization & Corporate IT Support',
+        title: 'Corporate Operations & IT Support',
         period: '2024 — 2026',
         role: 'Project Operations / IT Support',
         description:
-          'Moved work processes into Bitrix24 and established a consistent approach to corporate file storage. Also handled administrative and technical requests from employees.',
+          'Provided administrative and technical support for the Kaliningrad head office, which had approximately 30–50 employees. Supported corporate services, workstations, office equipment, and the local network.',
         result:
-          'Set up a task-management and file-storage workflow supporting 4–5 projects running in parallel.',
+          'Maintained office workstations and corporate services, responding to technical incidents to help reduce employee downtime.',
         achievements: [
-          'Created the cloud folder structure, configured access permissions, and prepared backups of existing materials.',
-          'Registered a new corporate telecom agreement, administered SIM cards, liaised with provider managers, and maintained related documentation.',
-          'Set up laptops and user accounts and helped employees resolve day-to-day technical issues.',
+          'Administered Yandex Disk and Yandex Mail: created accounts, configured access permissions, backed up Disk data, monitored incoming mail, and organized correspondence distribution.',
+          'Supported approximately 25 corporate SIM cards: prepared agreements, service documents, and requests; ordered and registered SIM cards; coordinated issues with Beeline and accounting.',
+          'Supported office PCs, laptops, printers, and the local network: configured workstations, installed software, arranged access, diagnosed and resolved technical issues.',
+          'Participated in office equipment selection, justified procurement needs, and presented budget requests.',
+          'Created employee accounts and configured access to corporate services.',
         ],
-        tools: ['Bitrix24', 'Cloud Storage', 'Corporate Telecom', 'IT Support'],
+        tools: ['Bitrix24', 'Yandex Disk', 'Yandex Mail', 'Beeline', 'Windows', 'IT Support'],
+      },
+      {
+        id: 'bitrix24-sales-funnels',
+        category: 'pm',
+        title: 'Sales Funnel Process Design in Bitrix24',
+        period: 'Internal project',
+        role: 'Process Design Contributor / Bitrix24 Administrator',
+        description:
+          'Worked with a colleague to map deal scenarios in Draw.io, covering different factory configurations and the sequence of actions from equipment sales to production. Based on the agreed process logic, an external specialist configured two automated funnels in Bitrix24.',
+        result:
+          'The funnels displayed the current deal stage, responsible employee, and next required action. The process logic was reviewed by the CEO.',
+        achievements: [
+          'Mapped deal scenarios and process steps in Draw.io.',
+          'Provided the agreed process logic to an external specialist for Bitrix24 automation setup.',
+          'Administered the completed funnels with a colleague and trained new employees to use them and Bitrix24.',
+        ],
+        tools: ['Draw.io', 'Bitrix24', 'Employee Training'],
       },
       {
         id: 'youtube-video-growth',
@@ -586,6 +690,23 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         ],
         tools: ['Blender', 'Blockbench', 'Photoshop', 'Unity (C#)', 'Trello', 'Discord', 'VK / Telegram'],
         media: [{ type: 'image', url: '/assets/gamedev-raft-1.webp', caption: '3D models and game assets created for Crystalix' }],
+      },
+      {
+        id: 'industrial-3d-lines',
+        category: 'gamedev',
+        title: 'Industrial 3D Visualization of Production Lines',
+        period: 'During my time at MP-Technologies',
+        role: '3D Modeling & Visualization',
+        description:
+          'Created Blender visualizations of industrial production lines. Independently modeled individual equipment units based on technical drawings and photographs, checked them against real equipment, and assembled them into lines with different scales and configurations.',
+        result:
+          'Created approximately 10 production line layouts with different scales and configurations.',
+        achievements: [
+          'Modeled equipment based on drawings, photographs, and visual examination of real machinery.',
+          'Assembled individual models into production line layouts.',
+          'Prepared line variations with different scales and configurations.',
+        ],
+        tools: ['Blender', '3D Modeling', 'Industrial Visualization'],
       },
     ],
   },

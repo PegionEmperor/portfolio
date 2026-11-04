@@ -59,14 +59,38 @@ const VISUAL_COPY: Record<string, { ru: { tag: string; title: string; note: stri
   },
   'process-b24-infra': {
     ru: {
-      tag: 'OPERATIONS / BITRIX24',
-      title: 'Здесь будет схема рабочих процессов',
-      note: 'Обезличенный скриншот Bitrix24, структура облачных папок или схема разграничения доступов.',
+      tag: 'OPERATIONS / IT SUPPORT',
+      title: 'Здесь будут материалы корпоративной IT-поддержки',
+      note: 'Обезличенные схемы структуры Яндекс Диска, примеры управления доступами или фотографии рабочего места и офисной техники.',
     },
     en: {
-      tag: 'OPERATIONS / BITRIX24',
-      title: 'Workflow diagram goes here',
-      note: 'A redacted Bitrix24 screenshot, cloud folder structure or access-permission diagram.',
+      tag: 'OPERATIONS / IT SUPPORT',
+      title: 'Corporate IT support materials go here',
+      note: 'Redacted Yandex Disk structure, access-management examples, or photos of office workstations and equipment.',
+    },
+  },
+  'bitrix24-sales-funnels': {
+    ru: {
+      tag: 'PROCESS DESIGN / BITRIX24',
+      title: 'Здесь будет схема двух автоматизированных воронок',
+      note: 'Обезличенная схема Draw.io: этапы сделки от продажи оборудования до производства, ответственные и следующие действия.',
+    },
+    en: {
+      tag: 'PROCESS DESIGN / BITRIX24',
+      title: 'Two automated sales funnel diagrams go here',
+      note: 'A redacted Draw.io diagram showing deal stages from equipment sales to production, responsibilities, and next actions.',
+    },
+  },
+  'service-app': {
+    ru: {
+      tag: 'SERVICE PRODUCT / PROTOTYPE',
+      title: 'Здесь будут скриншоты сервисного приложения',
+      note: 'Покажи ключевые экраны по ролям: клиент, сервисный инженер, менеджер, руководитель и администратор. Перед публикацией скрой реальные данные.',
+    },
+    en: {
+      tag: 'SERVICE PRODUCT / PROTOTYPE',
+      title: 'Service application screenshots go here',
+      note: 'Show key screens for the customer, service engineer, manager, executive, and administrator. Remove real data before publishing.',
     },
   },
   'youtube-video-growth': {
@@ -115,6 +139,18 @@ const VISUAL_COPY: Record<string, { ru: { tag: string; title: string; note: stri
       tag: 'GAMEDEV / 3D',
       title: '3D assets and game scenes go here',
       note: 'A selection of environment assets, buildings and game objects across five eras.',
+    },
+  },
+  'industrial-3d-lines': {
+    ru: {
+      tag: 'INDUSTRIAL / 3D VISUALIZATION',
+      title: 'Здесь будут 3D-визуализации производственных линий',
+      note: 'Рендеры оборудования, варианты компоновки и примеры линий разных масштабов и конфигураций.',
+    },
+    en: {
+      tag: 'INDUSTRIAL / 3D VISUALIZATION',
+      title: 'Industrial production line renders go here',
+      note: 'Equipment renders, layout variations, and production lines in different scales and configurations.',
     },
   },
 };
@@ -254,7 +290,7 @@ function ProjectCard({
           {expanded && (
             <div className="mt-4 space-y-4">
               <div>
-                <p className="mb-2 font-mono text-[8px] uppercase tracking-[0.18em] text-[#7e8991]">{isRu ? 'Мой вклад' : 'My contribution'}</p>
+                <p className="mb-2 font-mono text-[8px] uppercase tracking-[0.18em] text-[#7e8991]">{project.detailsTitle ?? (isRu ? 'Мой вклад' : 'My contribution')}</p>
                 <ul className="space-y-2">
                   {project.achievements.map((item, itemIndex) => (
                     <li key={`${project.id}-achievement-${itemIndex}`} className="flex gap-2 text-[10px] leading-relaxed text-[#aeb6bb]">
@@ -331,7 +367,7 @@ export default function App() {
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-[#80663f] bg-[#b99a69]/10 font-mono text-xs font-bold text-[#d7b675]">DY</span>
             <span className="min-w-0">
               <span className="block truncate text-[11px] font-semibold uppercase tracking-[0.12em] text-[#e9e6df]">{content.contacts.name}</span>
-              <span className="mt-0.5 block font-mono text-[8px] uppercase tracking-[0.2em] text-[#78838c]">Project Management</span>
+              <span className="mt-0.5 block font-mono text-[8px] uppercase tracking-[0.2em] text-[#78838c]">{content.hero.title}</span>
             </span>
           </a>
 
@@ -583,13 +619,7 @@ export default function App() {
             </div>
             <div className="flex flex-wrap gap-3">
               <a href={`https://t.me/${content.contacts.telegram}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#d5ad6c] px-5 py-3 text-[10px] font-bold text-[#11151a] transition hover:bg-[#e6c486]">Telegram <ArrowUpRight /></a>
-              <a
-                href={`mailto:${content.contacts.email}`}
-                className="inline-flex items-center gap-2 rounded-full border border-[#555e65] px-5 py-3 text-[10px] font-semibold text-[#d9d7d1] transition hover:border-[#b99a69]"
-              >
-                {content.contacts.email}
-                <ArrowUpRight />
-              </a>
+              <a href={`mailto:${content.contacts.email}`} className="inline-flex items-center gap-2 rounded-full border border-[#555e65] px-5 py-3 text-[10px] font-semibold text-[#d9d7d1] transition hover:border-[#b99a69]">{content.contacts.email} <ArrowUpRight /></a>
             </div>
           </div>
           <div className="flex flex-col gap-2 border-t border-[#343b40] px-6 py-4 text-[9px] text-[#6f7b83] sm:flex-row sm:items-center sm:justify-between md:px-9">
