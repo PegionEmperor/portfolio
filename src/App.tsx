@@ -158,6 +158,21 @@ export default function App() {
             ))}
           </div>
         </section>
+                {/* Контакты */}
+        <section className="pt-8 border-t border-slate-800 flex flex-wrap justify-between items-center gap-4 text-xs text-slate-400">
+          <div>
+            <p className="font-semibold text-slate-200">Данил Яковенко</p>
+            <p>Калининград / Удалённо</p>
+          </div>
+          <div className="flex gap-4">
+            <a href="https://t.me/DanilWorkProfile" target="_blank" rel="noreferrer" className="hover:text-indigo-400 transition">
+              Telegram: @DanilWorkProfile
+            </a>
+            <a href="mailto:vip.danl.yakovenko@mail.ru" className="hover:text-indigo-400 transition">
+              vip.danl.yakovenko@mail.ru
+            </a>
+          </div>
+        </section>
       </main>
     </div>
   );

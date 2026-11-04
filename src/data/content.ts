@@ -46,10 +46,10 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       subtitle: "Управление комплексными B2B/B2C цифровыми продуктами, GameDev-проектами и контент-маркетингом. Опыт выстраивания процессов с нуля и руководства кросс-функциональными командами до 15 человек.",
     },
     about: {
-      title: "Обо мне",
-      text: [
-        "Специализируюсь на систематизации хаотичных процессов, управлении R&D-исследованиями и запускe цифровых продуктов с нуля — от идеи и ТЗ до внедрения и роста метрик.",
-        "Выстроил систему управления задачами и облачного хранения в ГК «МП-Технологии», что позволило увеличить пропускную способность команды с 1–2 до ~15 проектов в месяц. Провожу внутреннее обучение сотрудников ИИ-инструментам."
+       text: [
+        "Контент-маркетолог и Project Manager с опытом работы в B2B и продвижении промышленного пищевого оборудования. Специализируюсь на систематизации хаотичных процессов, управлении R&D-исследованиями, ведении соцсетей, создании видео и статей, email-маркетинге и маркетинговых исследованиях.",
+        "Выстроил систему управления задачами и облачного хранения в ГК «МП-Технологии», что позволило увеличить пропускную способность команды с 1–2 до ~15 проектов в месяц. Владею на хорошем уровне CapCut, Figma, Photoshop и Blender, активно работаю с Bitrix24 и проводил внутреннее обучение сотрудников ИИ-инструментам.",
+        "Увлекаюсь книгами, настольными играми, варгеймом Warhammer и НРИ. Имею опыт организации игровых мероприятий с 0, умею подбирать активности под интересы участников и создавать комфортную атмосферу для общения. Готов участвовать в организации корпоративных мероприятий и досуга для сотрудников."
       ],
       educationTitle: "Образование и курсы",
       education: [
@@ -256,11 +256,12 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       subtitle: "Managing complex B2B/B2C digital products, GameDev projects, and content marketing. Building processes from scratch and leading cross-functional teams up to 15 people.",
     },
     about: {
-      title: "About Me",
-      text: [
-        "Specialized in systematizing chaotic workflows, managing R&D research, and launching digital products from scratch — from concept and technical specs to deployment and metrics growth.",
-        "Built task management and cloud storage systems at MP-Technologies, increasing team capacity from 1–2 to ~15 projects per month. Conduct internal AI tool training for staff."
+           text: [
+        "Content Marketer & Project Manager experienced in B2B and industrial food processing equipment promotion. Specialized in systematizing chaotic workflows, managing R&D research, social media growth, video/article production, email marketing, and market research.",
+        "Built task management and cloud storage systems at MP-Technologies, increasing team capacity from 1–2 to ~15 projects per month. Proficient in CapCut, Figma, Photoshop, Blender, Bitrix24, and conducting internal AI tool training for staff.",
+        "Passionate about books, board games, Warhammer wargaming, and TTRPGs. Experienced in organizing gaming events from scratch, selecting activities for participant interests, and maintaining a welcoming environment. Ready to help organize corporate events and team leisure activities."
       ],
+
       educationTitle: "Education & Courses",
       education: [
         {
