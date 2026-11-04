@@ -37,7 +37,7 @@ export interface Project {
 }
 
 export interface ContentSection {
-  nav: { cases: string; process: string; about: string; contact: string };
+  nav: { cases: string; otherProjects: string; about: string; contact: string };
   hero: {
     title: string;
     subtitle: string;
@@ -76,7 +76,7 @@ export interface ContentSection {
 
 export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
   ru: {
-    nav: { cases: 'Кейсы', process: 'Подход', about: 'Обо мне', contact: 'Контакты' },
+    nav: { cases: 'Ключевые кейсы', otherProjects: 'Другие ключевые проекты', about: 'Обо мне', contact: 'Контакты' },
     hero: {
       title: 'Project Manager / Operations Manager',
       subtitle:
@@ -397,7 +397,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
     ],
   },
   en: {
-    nav: { cases: 'Cases', process: 'Approach', about: 'About', contact: 'Contact' },
+    nav: { cases: 'Key Cases', otherProjects: 'Other Key Projects', about: 'About', contact: 'Contact' },
     hero: {
       title: 'Project Manager / Operations Manager',
       subtitle:

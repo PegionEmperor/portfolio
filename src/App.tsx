@@ -225,7 +225,7 @@ function ImagePlaceholder({
           maskImage: 'linear-gradient(to bottom right, black, transparent 88%)',
         }}
       />
-      <div className="absolute right-4 top-4 font-mono text-[9px] tracking-[0.18em] text-[#69737b]">
+      <div className="absolute right-4 top-4 font-mono text-[11px] tracking-[0.18em] text-[#69737b]">
         {portrait ? 'PROFILE / 01' : `${String(index ?? 1).padStart(2, '0')} / VISUAL`}
       </div>
       <div className={`m-auto flex w-full max-w-md flex-col items-center px-5 text-center ${compact ? 'py-7' : 'py-9'}`}>
@@ -238,10 +238,10 @@ function ImagePlaceholder({
             </svg>
           )}
         </div>
-        <span className="mb-2 font-mono text-[9px] font-semibold tracking-[0.2em] text-[#b99a69]">{tag}</span>
-        <p className={`max-w-sm font-semibold leading-snug text-[#e6e3dd] ${portrait ? 'text-lg md:text-xl' : compact ? 'text-xs' : 'text-sm md:text-base'}`}>{title}</p>
-        {!compact && <p className="mt-2 max-w-sm text-[10px] leading-relaxed text-[#89939a]">{note}</p>}
-        <span className="mt-4 rounded-full border border-[#515a61] px-3 py-1 font-mono text-[8px] uppercase tracking-[0.15em] text-[#78838b]">
+        <span className="mb-2 font-mono text-[11px] font-semibold tracking-[0.2em] text-[#b99a69]">{tag}</span>
+        <p className={`max-w-sm font-semibold leading-snug text-[#e6e3dd] ${portrait ? 'text-lg md:text-xl' : compact ? 'text-sm' : 'text-sm md:text-base'}`}>{title}</p>
+        {!compact && <p className="mt-2 max-w-sm text-[12px] leading-relaxed text-[#89939a]">{note}</p>}
+        <span className="mt-4 rounded-full border border-[#515a61] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-[#78838b]">
           {lang === 'ru' ? 'Заглушка изображения' : 'Image placeholder'}
         </span>
       </div>
@@ -264,10 +264,10 @@ function MediaImage({
   if (failed) {
     return (
       <div className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-2 bg-[#11171d] px-5 text-center">
-        <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#b99a69]">
+        <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#b99a69]">
           {lang === 'ru' ? 'Файл не найден' : 'File not found'}
         </span>
-        <span className="break-all text-[10px] text-[#9aa4aa]">{item.url}</span>
+        <span className="break-all text-[12px] text-[#9aa4aa]">{item.url}</span>
       </div>
     );
   }
@@ -297,10 +297,10 @@ function MediaVideo({
   if (failed) {
     return (
       <div className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-2 bg-[#11171d] px-5 text-center">
-        <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#b99a69]">
+        <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#b99a69]">
           {lang === 'ru' ? 'Видео не найдено' : 'Video not found'}
         </span>
-        <span className="break-all text-[10px] text-[#9aa4aa]">{item.url}</span>
+        <span className="break-all text-[12px] text-[#9aa4aa]">{item.url}</span>
       </div>
     );
   }
@@ -379,7 +379,7 @@ function ProjectMediaGallery({
             >
               ›
             </button>
-            <span className="absolute right-3 top-3 rounded-full border border-white/10 bg-black/65 px-2.5 py-1 font-mono text-[9px] text-white backdrop-blur">
+            <span className="absolute right-3 top-3 rounded-full border border-white/10 bg-black/65 px-2.5 py-1 font-mono text-[11px] text-white backdrop-blur">
               {activeIndex + 1} / {visualMedia.length}
             </span>
           </>
@@ -388,7 +388,7 @@ function ProjectMediaGallery({
 
       {(currentItem.caption || visualMedia.length > 1) && (
         <div className="flex items-center justify-between gap-3 border-t border-[#293139] px-3 py-2.5">
-          <p className="min-w-0 text-[9px] leading-relaxed text-[#9ba5ab]">
+          <p className="min-w-0 text-[11px] leading-relaxed text-[#9ba5ab]">
             {currentItem.caption || (currentItem.type === 'video' ? (isRu ? 'Видеоматериал проекта' : 'Project video') : (isRu ? 'Изображение проекта' : 'Project image'))}
           </p>
           {visualMedia.length > 1 && (
@@ -422,40 +422,41 @@ function ProjectCard({
   index: number;
   featured?: boolean;
 }) {
-  const [expanded, setExpanded] = useState(featured);
+  const [expanded, setExpanded] = useState(featured && project.id !== 'trendbooks');
   const imageIndex = index + 1;
   const isRu = lang === 'ru';
+  const showGallery = project.id !== 'trendbooks' || expanded;
   const imageLink = project.media?.find((item) => item.type === 'link');
 
   return (
     <article className="group overflow-hidden rounded-xl border border-[#303840] bg-[#11171d] transition duration-300 hover:border-[#7c6848]/80">
-      <div className={`grid ${featured ? 'md:grid-cols-[0.95fr_1.05fr]' : 'grid-cols-1'}`}>
+      <div className={`grid ${featured && showGallery ? 'md:grid-cols-[0.95fr_1.05fr]' : 'grid-cols-1'}`}>
         <div className="flex min-w-0 flex-col p-5 md:p-6">
-          <div className="mb-3 flex flex-wrap items-center gap-2 font-mono text-[9px] uppercase tracking-[0.15em] text-[#b99a69]">
+          <div className="mb-3 flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-[0.15em] text-[#b99a69]">
             <span>{String(imageIndex).padStart(2, '0')}</span>
             <span className="text-[#59636b]">/</span>
             <span>{project.period}</span>
             {project.teamSize && <span className="text-[#737e86]">· {project.teamSize}</span>}
           </div>
           <h3 className={`${featured ? 'text-xl md:text-2xl' : 'text-base'} font-semibold leading-tight tracking-tight text-[#eeece7]`}>{project.title}</h3>
-          <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.12em] text-[#a58a60]">{project.role}</p>
-          <p className="mt-4 text-xs leading-relaxed text-[#a5afb5]">{project.description}</p>
+          <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.12em] text-[#a58a60]">{project.role}</p>
+          <p className="mt-4 text-sm leading-relaxed text-[#a5afb5]">{project.description}</p>
           {project.result && (
             <div className="mt-4 border-l-2 border-[#b99a69] bg-[#b99a69]/[0.07] px-3 py-2.5">
-              <p className="mb-1 font-mono text-[8px] font-semibold uppercase tracking-[0.18em] text-[#c3a675]">
+              <p className="mb-1 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#c3a675]">
                 {isRu ? 'Результат' : 'Outcome'}
               </p>
-              <p className="text-[11px] leading-relaxed text-[#ddd8cd]">{project.result}</p>
+              <p className="text-[13px] leading-relaxed text-[#ddd8cd]">{project.result}</p>
             </div>
           )}
 
           {expanded && (
             <div className="mt-4 space-y-4">
               <div>
-                <p className="mb-2 font-mono text-[8px] uppercase tracking-[0.18em] text-[#7e8991]">{project.detailsTitle ?? (isRu ? 'Мой вклад' : 'My contribution')}</p>
+                <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#7e8991]">{project.detailsTitle ?? (isRu ? 'Мой вклад' : 'My contribution')}</p>
                 <ul className="space-y-2">
                   {project.achievements.map((item, itemIndex) => (
-                    <li key={`${project.id}-achievement-${itemIndex}`} className="flex gap-2 text-[10px] leading-relaxed text-[#aeb6bb]">
+                    <li key={`${project.id}-achievement-${itemIndex}`} className="flex gap-2 text-[12px] leading-relaxed text-[#aeb6bb]">
                       <span className="mt-[5px] h-1 w-1 shrink-0 rounded-full bg-[#b99a69]" />
                       <span>{item}</span>
                     </li>
@@ -464,10 +465,10 @@ function ProjectCard({
               </div>
               {project.team && project.team.length > 0 && (
                 <div>
-                  <p className="mb-2 font-mono text-[8px] uppercase tracking-[0.18em] text-[#7e8991]">{isRu ? 'Команда' : 'Team'}</p>
+                  <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#7e8991]">{isRu ? 'Команда' : 'Team'}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {project.team.map((member, memberIndex) => (
-                      <span key={`${project.id}-member-${memberIndex}`} className="rounded border border-[#333d45] bg-[#171f26] px-2 py-1 text-[9px] text-[#aab3ba]">{member}</span>
+                      <span key={`${project.id}-member-${memberIndex}`} className="rounded border border-[#333d45] bg-[#171f26] px-2 py-1 text-[11px] text-[#aab3ba]">{member}</span>
                     ))}
                   </div>
                 </div>
@@ -478,27 +479,29 @@ function ProjectCard({
           <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-[#2a3239] pt-4 mt-5">
             <div className="flex flex-wrap gap-1.5">
               {project.tools.slice(0, featured ? 5 : 4).map((tool) => (
-                <span key={tool} className="rounded border border-[#303941] bg-[#0c1116] px-2 py-1 font-mono text-[8px] text-[#7e8991]">{tool}</span>
+                <span key={tool} className="rounded border border-[#303941] bg-[#0c1116] px-2 py-1 font-mono text-[10px] text-[#7e8991]">{tool}</span>
               ))}
             </div>
             <button
               type="button"
               onClick={() => setExpanded((value) => !value)}
               aria-expanded={expanded}
-              className="shrink-0 text-[10px] font-semibold text-[#c4a777] transition hover:text-[#e2c99d]"
+              className="shrink-0 text-[12px] font-semibold text-[#c4a777] transition hover:text-[#e2c99d]"
             >
               {expanded ? (isRu ? 'Свернуть −' : 'Collapse −') : (isRu ? 'Подробнее +' : 'Details +')}
             </button>
           </div>
           {imageLink && (
-            <a href={imageLink.url} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-2 text-[10px] font-semibold text-[#c4a777] hover:text-[#e2c99d]">
+            <a href={imageLink.url} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-2 text-[12px] font-semibold text-[#c4a777] hover:text-[#e2c99d]">
               {imageLink.caption || imageLink.url}<ArrowUpRight />
             </a>
           )}
         </div>
-        <div className={`border-t border-[#2c343c] bg-[#0d1217] p-3 ${featured ? 'md:border-l md:border-t-0 md:p-4' : ''}`}>
-          <ProjectMediaGallery project={project} lang={lang} index={index + 1} compact={!featured} />
-        </div>
+        {showGallery && (
+          <div className={`border-t border-[#2c343c] bg-[#0d1217] p-3 ${featured ? 'md:border-l md:border-t-0 md:p-4' : ''}`}>
+            <ProjectMediaGallery project={project} lang={lang} index={index + 1} compact={!featured} />
+          </div>
+        )}
       </div>
     </article>
   );
@@ -526,16 +529,16 @@ export default function App() {
       <header className="sticky top-0 z-50 border-b border-[#252b30] bg-[#090c0f]/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5 md:px-9">
           <a href="#top" onClick={() => setMobileMenuOpen(false)} className="flex min-w-0 items-center gap-3">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-[#80663f] bg-[#b99a69]/10 font-mono text-xs font-bold text-[#d7b675]">DY</span>
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-[#80663f] bg-[#b99a69]/10 font-mono text-sm font-bold text-[#d7b675]">DY</span>
             <span className="min-w-0">
-              <span className="block truncate text-[11px] font-semibold uppercase tracking-[0.12em] text-[#e9e6df]">{content.contacts.name}</span>
-              <span className="mt-0.5 block font-mono text-[8px] uppercase tracking-[0.2em] text-[#78838c]">{content.hero.title}</span>
+              <span className="block truncate text-[13px] font-semibold uppercase tracking-[0.12em] text-[#e9e6df]">{content.contacts.name}</span>
+              <span className="mt-0.5 block font-mono text-[10px] uppercase tracking-[0.2em] text-[#78838c]">{content.hero.title}</span>
             </span>
           </a>
 
-          <nav className="hidden items-center gap-7 text-[11px] text-[#a2a9ad] md:flex" aria-label={content.ui.mainNavigationLabel}>
+          <nav className="hidden items-center gap-7 text-[13px] text-[#a2a9ad] md:flex" aria-label={content.ui.mainNavigationLabel}>
             <a href="#cases" className="transition hover:text-[#e2c28e]">{content.nav.cases}</a>
-            <a href="#process" className="transition hover:text-[#e2c28e]">{content.nav.process}</a>
+            <a href="#other-key-projects" className="transition hover:text-[#e2c28e]">{content.nav.otherProjects}</a>
             <a href="#about" className="transition hover:text-[#e2c28e]">{content.nav.about}</a>
             <a href="#contact" className="transition hover:text-[#e2c28e]">{content.nav.contact}</a>
           </nav>
@@ -548,7 +551,7 @@ export default function App() {
                   type="button"
                   onClick={() => setLang(language)}
                   aria-pressed={lang === language}
-                  className={`rounded px-2.5 py-1.5 font-mono text-[9px] font-bold transition ${lang === language ? 'bg-[#d4ad6e] text-[#101317]' : 'text-[#84909a] hover:text-[#e8e6e1]'}`}
+                  className={`rounded px-2.5 py-1.5 font-mono text-[11px] font-bold transition ${lang === language ? 'bg-[#d4ad6e] text-[#101317]' : 'text-[#84909a] hover:text-[#e8e6e1]'}`}
                 >
                   {language.toUpperCase()}
                 </button>
@@ -556,7 +559,7 @@ export default function App() {
             </div>
             <button
               type="button"
-              className="rounded-md border border-[#303840] bg-[#131920] px-3 py-2 text-xs text-[#c1c7cb] md:hidden"
+              className="rounded-md border border-[#303840] bg-[#131920] px-3 py-2 text-sm text-[#c1c7cb] md:hidden"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation"
               aria-label={mobileMenuOpen ? content.ui.closeMenuLabel : content.ui.openMenuLabel}
@@ -568,9 +571,9 @@ export default function App() {
         </div>
         {mobileMenuOpen && (
           <nav id="mobile-navigation" className="border-t border-[#252c33] px-5 py-4 md:hidden" aria-label={content.ui.mainNavigationLabel}>
-            <div className="mx-auto flex max-w-7xl flex-wrap gap-x-6 gap-y-3 text-xs text-[#bbc2c7]">
+            <div className="mx-auto flex max-w-7xl flex-wrap gap-x-6 gap-y-3 text-sm text-[#bbc2c7]">
               <a href="#cases" onClick={() => setMobileMenuOpen(false)}>{content.nav.cases}</a>
-              <a href="#process" onClick={() => setMobileMenuOpen(false)}>{content.nav.process}</a>
+              <a href="#other-key-projects" onClick={() => setMobileMenuOpen(false)}>{content.nav.otherProjects}</a>
               <a href="#about" onClick={() => setMobileMenuOpen(false)}>{content.nav.about}</a>
               <a href="#contact" onClick={() => setMobileMenuOpen(false)}>{content.nav.contact}</a>
             </div>
@@ -584,18 +587,18 @@ export default function App() {
           <div className="py-2">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#82683f] bg-[#bd985d]/[0.08] px-4 py-2">
               <span className="h-1.5 w-1.5 rounded-full bg-[#d3aa68]" />
-              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#d2ad70]">{content.hero.title}</span>
+              <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.18em] text-[#d2ad70]">{content.hero.title}</span>
             </div>
             <h1 className="max-w-3xl text-[2.7rem] font-semibold leading-[1.02] tracking-[-0.055em] text-[#f1efea] sm:text-6xl lg:text-[4.4rem]">
               {content.contacts.name}
             </h1>
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-[#b5bcc0] md:text-base md:leading-8">{content.hero.subtitle}</p>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-[#b5bcc0] md:text-lg md:leading-8">{content.hero.subtitle}</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <a href={`https://t.me/${content.contacts.telegram}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#d5ad6c] px-6 py-3 text-xs font-bold text-[#111317] transition hover:bg-[#e6c486]">
+              <a href={`https://t.me/${content.contacts.telegram}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#d5ad6c] px-6 py-3 text-sm font-bold text-[#111317] transition hover:bg-[#e6c486]">
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M21.6 4.4 18.4 19c-.2 1- .8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.8.4l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L6.9 13.3l-4.5-1.4c-1-.3-1-1 .2-1.5L20 4.1c.8-.3 1.9.2 1.6.3Z" /></svg>
                 {content.hero.cta}<ArrowUpRight />
               </a>
-              <a href={content.contacts.resumeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-[#555e65] bg-[#11161b] px-6 py-3 text-xs font-semibold text-[#e2e0da] transition hover:border-[#b99a69] hover:text-[#e3c28e]">
+              <a href={content.contacts.resumeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-[#555e65] bg-[#11161b] px-6 py-3 text-sm font-semibold text-[#e2e0da] transition hover:border-[#b99a69] hover:text-[#e3c28e]">
                 <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M5 2.8h7l3 3V17H5zM12 2.8v3h3M7.5 10h5M7.5 13h5" /></svg>
                 {content.hero.resumeLabel}<span aria-hidden="true">↓</span>
               </a>
@@ -604,7 +607,7 @@ export default function App() {
               {content.hero.stats.map((stat, index) => (
                 <div key={`${stat.value}-${index}`} className={`${index === 0 ? 'pr-3' : 'px-3'} min-w-0`}>
                   <div className="font-mono text-2xl font-semibold tracking-tight text-[#d9b77e] md:text-3xl">{stat.value}</div>
-                  <p className="mt-1 max-w-[155px] text-[10px] leading-relaxed text-[#929da3] md:text-[11px]">{stat.label}</p>
+                  <p className="mt-1 max-w-[155px] text-[12px] leading-relaxed text-[#929da3] md:text-[13px]">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -614,7 +617,7 @@ export default function App() {
             <div className="absolute -inset-3 rounded-[1.6rem] border border-[#96784d]/20" />
             <div className="relative rounded-[1.35rem] border border-[#3d454c] bg-[#11171d] p-2.5 shadow-2xl shadow-black/40">
               <ImagePlaceholder lang={lang} portrait />
-              <div className="flex items-center justify-between px-2 pb-1 pt-3 font-mono text-[8px] uppercase tracking-[0.16em] text-[#78838b]">
+              <div className="flex items-center justify-between px-2 pb-1 pt-3 font-mono text-[10px] uppercase tracking-[0.16em] text-[#78838b]">
                 <span>{content.contacts.location}</span>
                 <span>Portfolio / 2026</span>
               </div>
@@ -630,13 +633,13 @@ export default function App() {
                 <span className="h-3 w-3 rounded-full bg-[#d5ad6c] shadow-[0_0_16px_rgba(213,173,108,0.35)]" />
                 {content.ui.casesTitle}
               </h2>
-              <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#77828a]">{featuredProjects.length} / SELECTED</span>
+              <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#77828a]">{featuredProjects.length} / SELECTED</span>
             </div>
             {featuredProjects[0] && <ProjectCard project={featuredProjects[0]} lang={lang} index={0} featured />}
           </div>
 
           <div className="space-y-8">
-            <div id="process" className="scroll-mt-24">
+            <div id="workflow">
               <div className="mb-5 flex items-center gap-3">
                 <span className="h-3 w-3 rounded-full bg-[#d5ad6c] shadow-[0_0_16px_rgba(213,173,108,0.35)]" />
                 <h2 className="text-xl font-semibold tracking-tight text-[#efede8] md:text-2xl">{content.process.title}</h2>
@@ -644,9 +647,9 @@ export default function App() {
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
                 {content.process.steps.map((step, index) => (
                   <div key={`${step.title}-${index}`} className="relative flex min-h-[135px] flex-col rounded-lg border border-[#303840] bg-[#11171d] p-3.5">
-                    <span className="mb-3 flex h-9 w-9 items-center justify-center rounded-full border border-[#9b8057] font-mono text-xs text-[#e1bc7e]">{String(index + 1).padStart(2, '0')}</span>
-                    <h3 className="text-[11px] font-semibold leading-snug text-[#e8e5df]">{step.title}</h3>
-                    <p className="mt-1.5 text-[9px] leading-relaxed text-[#859099]">{step.text}</p>
+                    <span className="mb-3 flex h-9 w-9 items-center justify-center rounded-full border border-[#9b8057] font-mono text-sm text-[#e1bc7e]">{String(index + 1).padStart(2, '0')}</span>
+                    <h3 className="text-[13px] font-semibold leading-snug text-[#e8e5df]">{step.title}</h3>
+                    <p className="mt-1.5 text-[11px] leading-relaxed text-[#859099]">{step.text}</p>
                   </div>
                 ))}
               </div>
@@ -655,16 +658,16 @@ export default function App() {
             <div className="relative overflow-hidden rounded-xl border border-[#5c4a30] bg-[#15191d] p-5 md:p-6">
               <div className="pointer-events-none absolute -right-12 -top-16 h-56 w-56 rounded-full border border-[#a17f4c]/15" />
               <div className="pointer-events-none absolute -right-4 -top-8 h-40 w-40 rounded-full border border-[#a17f4c]/10" />
-              <p className="relative mb-3 font-mono text-[9px] uppercase tracking-[0.2em] text-[#c5a16a]">03 / AI TOOLS</p>
+              <p className="relative mb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[#c5a16a]">03 / AI TOOLS</p>
               <h2 className="relative text-lg font-semibold text-[#efebe3]">{content.ai.title}</h2>
-              <p className="relative mt-2 max-w-lg text-[10px] leading-relaxed text-[#939da3]">
+              <p className="relative mt-2 max-w-lg text-[12px] leading-relaxed text-[#939da3]">
                 {isRu ? 'Применяю ИИ в аналитике, контенте и повседневных рабочих процессах.' : 'Applying AI to research, content and everyday workflows.'}
               </p>
               <div className="relative mt-4 grid gap-2 sm:grid-cols-3">
                 {content.ai.points.map((point, index) => (
                   <div key={`${point}-${index}`} className="flex gap-2 rounded-md border border-[#363d40] bg-[#0e1317]/80 p-3">
-                    <span className="font-mono text-[9px] text-[#d1aa6c]">0{index + 1}</span>
-                    <p className="text-[9px] leading-relaxed text-[#b6bec2]">{point}</p>
+                    <span className="font-mono text-[11px] text-[#d1aa6c]">0{index + 1}</span>
+                    <p className="text-[11px] leading-relaxed text-[#b6bec2]">{point}</p>
                   </div>
                 ))}
               </div>
@@ -674,13 +677,13 @@ export default function App() {
 
         {/* Remaining featured cases */}
         {featuredProjects.length > 1 && (
-          <section className="pt-12">
+          <section id="other-key-projects" className="scroll-mt-24 pt-12">
             <div className="mb-5 flex items-end justify-between gap-4 border-b border-[#2b3137] pb-4">
               <div>
-                <p className="mb-2 font-mono text-[9px] uppercase tracking-[0.22em] text-[#b99a69]">01 / CONTINUED</p>
+                <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[#b99a69]">01 / CONTINUED</p>
                 <h2 className="text-xl font-semibold text-[#efede8] md:text-2xl">{isRu ? 'Другие ключевые проекты' : 'More selected projects'}</h2>
               </div>
-              <span className="font-mono text-[9px] text-[#77828a]">{featuredProjects.length - 1} CASES</span>
+              <span className="font-mono text-[11px] text-[#77828a]">{featuredProjects.length - 1} CASES</span>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               {featuredProjects.slice(1).map((project, index) => (
@@ -694,9 +697,9 @@ export default function App() {
         <section className="pt-14">
           <div className="flex flex-col gap-4 border-b border-[#2b3137] pb-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="mb-2 font-mono text-[9px] uppercase tracking-[0.22em] text-[#b99a69]">04 / MORE EXPERIENCE</p>
+              <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[#b99a69]">04 / MORE EXPERIENCE</p>
               <h2 className="text-xl font-semibold text-[#efede8] md:text-2xl">{content.ui.moreTitle}</h2>
-              <p className="mt-2 max-w-xl text-[10px] leading-relaxed text-[#7e8991]">
+              <p className="mt-2 max-w-xl text-[12px] leading-relaxed text-[#7e8991]">
                 {isRu ? 'Дополнительный опыт в операционных процессах, контент-маркетинге и GameDev.' : 'Additional experience in operations, content marketing and GameDev.'}
               </p>
             </div>
@@ -705,7 +708,7 @@ export default function App() {
               onClick={() => setShowMore((value) => !value)}
               aria-expanded={showMore}
               aria-controls="secondary-projects"
-              className="self-start rounded-full border border-[#4a535a] bg-[#12181e] px-5 py-2.5 font-mono text-[9px] uppercase tracking-[0.14em] text-[#d0b17b] transition hover:border-[#a98b5d] hover:bg-[#1a2228] sm:self-auto"
+              className="self-start rounded-full border border-[#4a535a] bg-[#12181e] px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.14em] text-[#d0b17b] transition hover:border-[#a98b5d] hover:bg-[#1a2228] sm:self-auto"
             >
               {showMore ? content.ui.hideProjectsLabel : `${content.ui.showProjectsLabel} (${secondaryProjects.length})`}
               <span className="ml-3" aria-hidden="true">{showMore ? '−' : '+'}</span>
@@ -719,7 +722,7 @@ export default function App() {
                 if (!categoryProjects.length) return null;
                 return (
                   <div key={category}>
-                    <h3 className="mb-4 font-mono text-[9px] font-semibold uppercase tracking-[0.19em] text-[#b99a69]">{content.ui.categoryLabels[category]}</h3>
+                    <h3 className="mb-4 font-mono text-[11px] font-semibold uppercase tracking-[0.19em] text-[#b99a69]">{content.ui.categoryLabels[category]}</h3>
                     <div className="grid gap-4 md:grid-cols-2">
                       {categoryProjects.map((project, index) => (
                         <ProjectCard key={project.id} project={project} lang={lang} index={index} />
@@ -735,23 +738,23 @@ export default function App() {
         {/* About */}
         <section id="about" className="scroll-mt-24 grid gap-9 border-y border-[#2a3036] py-14 md:grid-cols-[1.1fr_0.9fr] md:py-16">
           <div>
-            <p className="mb-2 font-mono text-[9px] uppercase tracking-[0.22em] text-[#b99a69]">05 / PROFILE</p>
+            <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[#b99a69]">05 / PROFILE</p>
             <h2 className="mb-5 text-xl font-semibold text-[#efede8] md:text-2xl">{content.about.title}</h2>
             <div className="space-y-3">
               {content.about.text.map((paragraph, index) => (
-                <p key={`about-${index}`} className="text-xs leading-7 text-[#a6afb5]">{paragraph}</p>
+                <p key={`about-${index}`} className="text-sm leading-7 text-[#a6afb5]">{paragraph}</p>
               ))}
             </div>
             <div className="mt-8">
-              <p className="mb-4 font-mono text-[9px] font-semibold uppercase tracking-[0.19em] text-[#b99a69]">{content.about.educationTitle}</p>
+              <p className="mb-4 font-mono text-[11px] font-semibold uppercase tracking-[0.19em] text-[#b99a69]">{content.about.educationTitle}</p>
               <div className="space-y-4">
                 {content.about.education.map((education, index) => (
                   <div key={`${education.school}-${index}`} className="flex flex-col gap-1 border-l border-[#8b7450] pl-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                     <div>
-                      <p className="text-[11px] font-semibold text-[#ddd9d1]">{education.degree}</p>
-                      <p className="mt-1 text-[10px] text-[#808b93]">{education.school}</p>
+                      <p className="text-[13px] font-semibold text-[#ddd9d1]">{education.degree}</p>
+                      <p className="mt-1 text-[12px] text-[#808b93]">{education.school}</p>
                     </div>
-                    <span className="font-mono text-[9px] text-[#a88d60]">{education.years}</span>
+                    <span className="font-mono text-[11px] text-[#a88d60]">{education.years}</span>
                   </div>
                 ))}
               </div>
@@ -759,11 +762,11 @@ export default function App() {
           </div>
 
           <aside className="rounded-xl border border-[#303840] bg-[#11171d] p-5 md:p-6">
-            <p className="mb-5 font-mono text-[9px] font-semibold uppercase tracking-[0.19em] text-[#b99a69]">{content.about.skillsTitle}</p>
+            <p className="mb-5 font-mono text-[11px] font-semibold uppercase tracking-[0.19em] text-[#b99a69]">{content.about.skillsTitle}</p>
             <ul className="space-y-3">
               {content.about.skills.map((skill, index) => (
-                <li key={`${skill}-${index}`} className="flex gap-3 border-b border-[#293139] pb-3 text-[10px] leading-relaxed text-[#b3bbc0] last:border-0">
-                  <span className="font-mono text-[9px] text-[#8e7957]">{String(index + 1).padStart(2, '0')}</span>
+                <li key={`${skill}-${index}`} className="flex gap-3 border-b border-[#293139] pb-3 text-[12px] leading-relaxed text-[#b3bbc0] last:border-0">
+                  <span className="font-mono text-[11px] text-[#8e7957]">{String(index + 1).padStart(2, '0')}</span>
                   <span>{skill}</span>
                 </li>
               ))}
@@ -775,16 +778,16 @@ export default function App() {
         <footer id="contact" className="scroll-mt-24 overflow-hidden rounded-xl border border-[#55462f] bg-[#14191e]">
           <div className="grid gap-6 p-6 md:grid-cols-[1fr_auto] md:items-center md:p-9">
             <div>
-              <p className="font-mono text-[9px] uppercase tracking-[0.22em] text-[#b99a69]">06 / CONTACT</p>
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#b99a69]">06 / CONTACT</p>
               <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[#eeeae2] md:text-3xl">{isRu ? 'Обсудим ваш следующий проект?' : 'Let’s discuss your next project.'}</h2>
-              <p className="mt-3 text-[10px] text-[#8f9aa1]">{content.contacts.location}</p>
+              <p className="mt-3 text-[12px] text-[#8f9aa1]">{content.contacts.location}</p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <a href={`https://t.me/${content.contacts.telegram}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#d5ad6c] px-5 py-3 text-[10px] font-bold text-[#11151a] transition hover:bg-[#e6c486]">Telegram <ArrowUpRight /></a>
-              <a href={`mailto:${content.contacts.email}`} className="inline-flex items-center gap-2 rounded-full border border-[#555e65] px-5 py-3 text-[10px] font-semibold text-[#d9d7d1] transition hover:border-[#b99a69]">{content.contacts.email} <ArrowUpRight /></a>
+              <a href={`https://t.me/${content.contacts.telegram}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#d5ad6c] px-5 py-3 text-[12px] font-bold text-[#11151a] transition hover:bg-[#e6c486]">Telegram <ArrowUpRight /></a>
+              <a href={`mailto:${content.contacts.email}`} className="inline-flex items-center gap-2 rounded-full border border-[#555e65] px-5 py-3 text-[12px] font-semibold text-[#d9d7d1] transition hover:border-[#b99a69]">{content.contacts.email} <ArrowUpRight /></a>
             </div>
           </div>
-          <div className="flex flex-col gap-2 border-t border-[#343b40] px-6 py-4 text-[9px] text-[#6f7b83] sm:flex-row sm:items-center sm:justify-between md:px-9">
+          <div className="flex flex-col gap-2 border-t border-[#343b40] px-6 py-4 text-[11px] text-[#6f7b83] sm:flex-row sm:items-center sm:justify-between md:px-9">
             <span>{content.contacts.name} · {isRu ? 'Портфолио' : 'Portfolio'}</span>
             <span className="font-mono uppercase tracking-[0.14em]">{content.contacts.location} · 2026</span>
           </div>
