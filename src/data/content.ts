@@ -164,7 +164,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       {
         id: 'trendbooks',
         category: 'pm',
-        featured: false,
+        featured: true,
         title: 'Разработка аналитических трендбуков',
         period: '2025 — 2026',
         role: 'Основной PM и автор аналитической части',
@@ -485,7 +485,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       {
         id: 'trendbooks',
         category: 'pm',
-        featured: false,
+        featured: true,
         title: 'Analytical Trendbooks Development',
         period: '2025 — 2026',
         role: 'Lead PM & Main Analytics Author',
