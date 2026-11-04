@@ -2,9 +2,10 @@ export type Lang = 'ru' | 'en';
 export type ProjectCategory = 'pm' | 'marketing' | 'gamedev';
 
 export interface ProjectMedia {
-  type: 'image' | 'link';
+  type: 'image' | 'video' | 'link';
   url: string;
   caption?: string;
+  poster?: string;
 }
 
 export interface Project {
@@ -152,7 +153,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       {
         id: 'trendbooks',
         category: 'pm',
-        featured: true,
+        featured: false,
         title: 'Разработка аналитических трендбуков',
         period: '2025 — 2026',
         role: 'Основной PM и автор аналитической части',
@@ -179,7 +180,6 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Согласовывал материалы с директором по маркетингу, контролировал сроки и организовывал поэтапную сдачу CEO.',
         ],
         tools: ['Bitrix24', 'Figma', 'Презентации', 'Экспертные интервью'],
-        media: [{ type: 'image', url: '/assets/trendbook-1.webp', caption: 'Фрагмент аналитического трендбука. Публиковать только после проверки и необратимого скрытия NDA-данных.' }],
       },
       {
         id: 'service-app',
@@ -225,7 +225,6 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Организовывал коммуникацию с клиентом, согласование промежуточных решений и финальную презентацию.',
         ],
         tools: ['Bitrix24', 'Figma', 'Клиентские встречи', 'Презентации'],
-        media: [{ type: 'image', url: '/assets/kita-1.webp', caption: 'Материалы проекта. Перед публикацией проверь разрешение клиента и условия использования.' }],
       },
       {
         id: 'rd-shelf-life',
@@ -245,7 +244,6 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Координировал передачу образцов и получение результатов лабораторных проверок.',
         ],
         tools: ['Bitrix24', 'Excel', 'Google Sheets', 'Лабораторные отчёты'],
-        media: [{ type: 'image', url: '/assets/shelf-life-1.webp', caption: 'График эксперимента или обезличенный фрагмент лабораторных результатов' }],
       },
       {
         id: 'digital-showcase',
@@ -266,7 +264,6 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         ],
         tools: ['Figma', 'Bitrix24', 'Требования к веб-разработке', 'Опросы'],
         media: [
-          { type: 'image', url: '/assets/pack5-1.webp', caption: 'Фрагмент цифровой витрины PACK-5' },
           { type: 'link', url: 'https://pack-5.ru/', caption: 'Открыть сайт PACK-5' },
         ],
       },
@@ -368,7 +365,6 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Координировал задачи команды из пяти человек и развивал сообщества проекта: VK — 715 участников, Discord и Telegram.',
         ],
         tools: ['Blender', 'Blockbench', 'Photoshop', 'Unity (C#)', 'Trello', 'Discord', 'VK / Telegram'],
-        media: [{ type: 'image', url: '/assets/gamedev-raft-1.webp', caption: '3D-модели и игровые объекты для Crystalix' }],
       },
       {
         id: 'industrial-3d-lines',
@@ -478,7 +474,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
       {
         id: 'trendbooks',
         category: 'pm',
-        featured: true,
+        featured: false,
         title: 'Analytical Trendbooks Development',
         period: '2025 — 2026',
         role: 'Lead PM & Main Analytics Author',
@@ -505,7 +501,6 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Aligned materials with the Marketing Director, tracked deadlines, and coordinated phased delivery to the CEO.',
         ],
         tools: ['Bitrix24', 'Figma', 'Presentations', 'Expert Interviews'],
-        media: [{ type: 'image', url: '/assets/trendbook-1.webp', caption: 'Trendbook excerpt. Publish only after checking permissions and irreversibly removing confidential information.' }],
       },
       {
         id: 'service-app',
@@ -546,7 +541,6 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Managed client communication, intermediate approvals, and the final presentation.',
         ],
         tools: ['Bitrix24', 'Figma', 'Client Meetings', 'Presentations'],
-        media: [{ type: 'image', url: '/assets/kita-1.webp', caption: 'Project materials. Check client permission and usage terms before publication.' }],
       },
       {
         id: 'rd-shelf-life',
@@ -566,7 +560,6 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Coordinated sample transfers and receipt of laboratory results.',
         ],
         tools: ['Bitrix24', 'Excel', 'Google Sheets', 'Laboratory Reports'],
-        media: [{ type: 'image', url: '/assets/shelf-life-1.webp', caption: 'Experiment timeline or an anonymized excerpt from the laboratory results' }],
       },
       {
         id: 'digital-showcase',
@@ -587,7 +580,6 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         ],
         tools: ['Figma', 'Bitrix24', 'Web Requirements', 'Surveys'],
         media: [
-          { type: 'image', url: '/assets/pack5-1.webp', caption: 'PACK-5 digital showcase excerpt' },
           { type: 'link', url: 'https://pack-5.ru/', caption: 'Open PACK-5 website' },
         ],
       },
@@ -689,7 +681,6 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Coordinated a five-person team and managed project communities: VK — 715 members, plus Discord and Telegram.',
         ],
         tools: ['Blender', 'Blockbench', 'Photoshop', 'Unity (C#)', 'Trello', 'Discord', 'VK / Telegram'],
-        media: [{ type: 'image', url: '/assets/gamedev-raft-1.webp', caption: '3D models and game assets created for Crystalix' }],
       },
       {
         id: 'industrial-3d-lines',

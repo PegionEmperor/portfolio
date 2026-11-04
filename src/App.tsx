@@ -4,6 +4,7 @@ import {
   type Lang,
   type Project,
   type ProjectCategory,
+  type ProjectMedia,
 } from './data/content';
 
 const SECONDARY_CATEGORIES: ProjectCategory[] = ['pm', 'marketing', 'gamedev'];
@@ -249,6 +250,167 @@ function ImagePlaceholder({
   );
 }
 
+function MediaImage({
+  item,
+  title,
+  lang,
+}: {
+  item: Extract<NonNullable<Project['media']>[number], { type: 'image' }>;
+  title: string;
+  lang: Lang;
+}) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return (
+      <div className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-2 bg-[#11171d] px-5 text-center">
+        <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#b99a69]">
+          {lang === 'ru' ? 'Файл не найден' : 'File not found'}
+        </span>
+        <span className="break-all text-[10px] text-[#9aa4aa]">{item.url}</span>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={item.url}
+      alt={item.caption || title}
+      loading="lazy"
+      onError={() => setFailed(true)}
+      className="aspect-[4/3] w-full bg-[#0b1014] object-contain"
+    />
+  );
+}
+
+function MediaVideo({
+  item,
+  title,
+  lang,
+}: {
+  item: Extract<NonNullable<Project['media']>[number], { type: 'video' }>;
+  title: string;
+  lang: Lang;
+}) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return (
+      <div className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-2 bg-[#11171d] px-5 text-center">
+        <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#b99a69]">
+          {lang === 'ru' ? 'Видео не найдено' : 'Video not found'}
+        </span>
+        <span className="break-all text-[10px] text-[#9aa4aa]">{item.url}</span>
+      </div>
+    );
+  }
+
+  return (
+    <video
+      key={item.url}
+      controls
+      playsInline
+      preload="metadata"
+      poster={item.poster}
+      aria-label={item.caption || title}
+      onError={() => setFailed(true)}
+      className="aspect-[4/3] w-full bg-[#050708] object-contain"
+    >
+      <source src={item.url} />
+      {lang === 'ru' ? 'Ваш браузер не поддерживает видео.' : 'Your browser does not support video.'}
+    </video>
+  );
+}
+
+function ProjectMediaGallery({
+  project,
+  lang,
+  index,
+  compact = false,
+}: {
+  project: Project;
+  lang: Lang;
+  index: number;
+  compact?: boolean;
+}) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const visualMedia = (project.media ?? []).filter(
+    (item): item is Extract<ProjectMedia, { type: 'image' | 'video' }> =>
+      item.type === 'image' || item.type === 'video',
+  );
+  const currentItem = visualMedia[activeIndex];
+  const isRu = lang === 'ru';
+
+  if (visualMedia.length === 0 || !currentItem) {
+    return <ImagePlaceholder project={project} lang={lang} index={index} compact={compact} />;
+  }
+
+  const goToPrevious = () => {
+    setActiveIndex((current) => (current - 1 + visualMedia.length) % visualMedia.length);
+  };
+  const goToNext = () => {
+    setActiveIndex((current) => (current + 1) % visualMedia.length);
+  };
+
+  return (
+    <div className="overflow-hidden rounded-xl border border-[#3a434b] bg-[#080c10]">
+      <div className="relative">
+        {currentItem.type === 'image' ? (
+          <MediaImage key={currentItem.url} item={currentItem} title={project.title} lang={lang} />
+        ) : (
+          <MediaVideo key={currentItem.url} item={currentItem} title={project.title} lang={lang} />
+        )}
+
+        {visualMedia.length > 1 && (
+          <>
+            <button
+              type="button"
+              onClick={goToPrevious}
+              aria-label={isRu ? 'Предыдущий материал' : 'Previous media'}
+              className="absolute left-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/65 text-lg text-white shadow-lg backdrop-blur transition hover:bg-black/85"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              onClick={goToNext}
+              aria-label={isRu ? 'Следующий материал' : 'Next media'}
+              className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/65 text-lg text-white shadow-lg backdrop-blur transition hover:bg-black/85"
+            >
+              ›
+            </button>
+            <span className="absolute right-3 top-3 rounded-full border border-white/10 bg-black/65 px-2.5 py-1 font-mono text-[9px] text-white backdrop-blur">
+              {activeIndex + 1} / {visualMedia.length}
+            </span>
+          </>
+        )}
+      </div>
+
+      {(currentItem.caption || visualMedia.length > 1) && (
+        <div className="flex items-center justify-between gap-3 border-t border-[#293139] px-3 py-2.5">
+          <p className="min-w-0 text-[9px] leading-relaxed text-[#9ba5ab]">
+            {currentItem.caption || (currentItem.type === 'video' ? (isRu ? 'Видеоматериал проекта' : 'Project video') : (isRu ? 'Изображение проекта' : 'Project image'))}
+          </p>
+          {visualMedia.length > 1 && (
+            <div className="flex shrink-0 items-center gap-1.5" aria-label={isRu ? 'Выбор материала' : 'Choose media'}>
+              {visualMedia.map((item, itemIndex) => (
+                <button
+                  key={`${item.url}-${itemIndex}`}
+                  type="button"
+                  onClick={() => setActiveIndex(itemIndex)}
+                  aria-label={`${isRu ? 'Открыть материал' : 'Open media'} ${itemIndex + 1}`}
+                  aria-pressed={activeIndex === itemIndex}
+                  className={`h-1.5 rounded-full transition-all ${activeIndex === itemIndex ? 'w-5 bg-[#c7a36d]' : 'w-1.5 bg-[#65717a] hover:bg-[#aeb6bb]'}`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function ProjectCard({
   project,
   lang,
@@ -335,7 +497,7 @@ function ProjectCard({
           )}
         </div>
         <div className={`border-t border-[#2c343c] bg-[#0d1217] p-3 ${featured ? 'md:border-l md:border-t-0 md:p-4' : ''}`}>
-          <ImagePlaceholder project={project} lang={lang} index={index + 1} compact={!featured} />
+          <ProjectMediaGallery project={project} lang={lang} index={index + 1} compact={!featured} />
         </div>
       </div>
     </article>
