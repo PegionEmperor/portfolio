@@ -1199,9 +1199,7 @@ export default function App() {
             <div className="absolute -inset-3 rounded-[1.6rem] border border-[#96784d]/20" />
 
             <div className="relative rounded-[1.35rem] border border-[#3d454c] bg-[#11171d] p-2.5 shadow-2xl shadow-black/40">
-
-              <ProfilePortrait name={content.contacts.name} />
-
+<ProfilePortrait name={content.contacts.name} />
               <div className="flex items-center justify-between px-2 pb-1 pt-3 font-mono text-[10px] uppercase tracking-[0.16em] text-[#78838b]">
 
                 <span>{content.contacts.location}</span>
