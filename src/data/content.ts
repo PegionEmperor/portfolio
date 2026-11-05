@@ -18,6 +18,11 @@ export type ProjectMedia =
       url: string;
       caption?: string;
     };
+export interface ProjectPublication {
+  title: string;
+  cover: string;
+  url?: string;
+}
 
 export interface Project {
   id: string;
@@ -34,6 +39,7 @@ export interface Project {
   achievements: string[];
   tools: string[];
   media?: ProjectMedia[];
+    publications?: ProjectPublication[];
 }
 
 export interface ContentSection {
@@ -191,6 +197,22 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Согласование материалов с директором по маркетингу, контроль сроков и поэтапная сдача результатов CEO.',
         ],
         tools: ['Bitrix24', 'Figma', 'Презентации', 'Экспертные интервью'],
+                publications: [
+          {
+            title: 'TREND BOOK #1 — «Мясные снеки»',
+            cover: '/assets/projects/trendbooks/Trendbook1.png',
+            url: 'https://mp-tek.ru/media/analiz-rynka-i-prognozirovanie-trendov-pishchevoy-promyshlennosti.html',
+          },
+          {
+            title: 'TREND BOOK #2 — «Новый формат прикассового снека»',
+            cover: '/assets/projects/trendbooks/Trendbook2.png',
+            url: 'https://pack-5.ru/products/sosiska_na_teploi_polke/',
+          },
+          {
+            title: 'TREND BOOK #3',
+            cover: '/assets/projects/trendbooks/Trendbook3.png',
+          },
+        ],
       },
       {
         id: 'service-app',
@@ -511,6 +533,22 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Material alignment with the Marketing Director, deadline control, and phased delivery to the CEO.',
         ],
         tools: ['Bitrix24', 'Figma', 'Presentations', 'Expert Interviews'],
+                publications: [
+          {
+            title: 'TREND BOOK #1 — Meat Snacks',
+            cover: '/assets/projects/trendbooks/Trendbook1.png',
+            url: 'https://mp-tek.ru/media/analiz-rynka-i-prognozirovanie-trendov-pishchevoy-promyshlennosti.html',
+          },
+          {
+            title: 'TREND BOOK #2 — A New Convenience-Store Snack Format',
+            cover: '/assets/projects/trendbooks/Trendbook2.png',
+            url: 'https://pack-5.ru/products/sosiska_na_teploi_polke/',
+          },
+          {
+            title: 'TREND BOOK #3',
+            cover: '/assets/projects/trendbooks/Trendbook3.png',
+          },
+        ],
       },
       {
         id: 'service-app',

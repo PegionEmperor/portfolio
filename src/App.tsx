@@ -810,6 +810,86 @@ function ProjectMediaGallery({
 
 }
 
+function ProjectPublications({
+  project,
+  lang,
+}: {
+  project: Project;
+  lang: Lang;
+}) {
+  const publications = project.publications ?? [];
+
+  if (publications.length === 0) {
+    return null;
+  }
+
+  return (
+    <section className="mt-5">
+      <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#b99a69]">
+        {lang === 'ru' ? 'Выпущенные материалы' : 'Published materials'}
+      </p>
+
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+        {publications.map((publication, publicationIndex) => {
+  const isUpcoming = publicationIndex === 2;
+
+  return (
+          <article
+            key={publication.title}
+            className="overflow-hidden rounded-lg border border-[#303941] bg-[#0c1116]"
+          >
+<div className="relative overflow-hidden bg-[#080c10]">
+  <img
+    src={assetUrl(publication.cover)}
+    alt={publication.title}
+    loading="lazy"
+    className={`block h-auto w-full ${
+      isUpcoming ? 'scale-[1.03] blur-[4px]' : ''
+    }`}
+  />
+
+  {isUpcoming && (
+    <div className="absolute inset-0 flex items-center justify-center bg-black/25">
+      <span className="rounded-full border border-[#b99a69]/70 bg-[#11171d]/90 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#d6b77f]">
+        Coming soon
+      </span>
+    </div>
+  )}
+</div>
+
+            <div className="p-3">
+              <p className="text-xs font-semibold leading-relaxed text-[#ddd8cd]">
+                {publication.title}
+              </p>
+              {isUpcoming && (
+  <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.12em] text-[#b99a69]">
+    {lang === 'ru' ? 'Ещё не вышел' : 'Not yet released'}
+  </p>
+)}
+
+              {publication.url && (
+                <a
+                  href={publication.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 text-[11px] font-semibold text-[#c4a777] transition hover:text-[#e2c99d]"
+                >
+                  {lang === 'ru'
+                    ? 'Открыть материал компании'
+                    : 'Open company publication'}
+
+                  <ArrowUpRight />
+                </a>
+              )}
+            </div>
+          </article>
+          );
+})}
+      </div>
+    </section>
+  );
+}
+
 function ProjectCard({
 
   project,
@@ -838,7 +918,7 @@ function ProjectCard({
 
   const isRu = lang === 'ru';
 
-  const showGallery = project.id !== 'trendbooks' || expanded;
+  const showGallery = project.id !== 'trendbooks';
 
   const imageLink = project.media?.find((item) => item.type === 'link');
 
@@ -868,21 +948,18 @@ function ProjectCard({
 
           <p className="mt-4 text-sm leading-relaxed text-[#a5afb5]">{project.description}</p>
 
-          {project.result && (
+{project.result && (
+  <div className="mt-4 border-l-2 border-[#b99a69] bg-[#b99a69]/[0.07] px-3 py-2.5">
+    <p className="mb-1 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#c3a675]">
+      {isRu ? 'Результат' : 'Outcome'}
+    </p>
+    <p className="text-[13px] leading-relaxed text-[#ddd8cd]">
+      {project.result}
+    </p>
+  </div>
+)}
 
-            <div className="mt-4 border-l-2 border-[#b99a69] bg-[#b99a69]/[0.07] px-3 py-2.5">
-
-              <p className="mb-1 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#c3a675]">
-
-                {isRu ? 'Результат' : 'Outcome'}
-
-              </p>
-
-              <p className="text-[13px] leading-relaxed text-[#ddd8cd]">{project.result}</p>
-
-            </div>
-
-          )}
+<ProjectPublications project={project} lang={lang} />
 
           {expanded && (
 
@@ -1216,97 +1293,67 @@ export default function App() {
 
         {/* Cases + workflow overview */}
 
-        <section id="cases" className="scroll-mt-24 grid gap-10 pt-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+       {/* Cases + workflow overview */}
+<section id="cases" className="scroll-mt-24 pt-12">
 
-          <div>
+  {/* Заголовок ключевых кейсов */}
+  <div className="mb-5 flex items-center justify-between gap-3">
+    <h2 className="flex items-center gap-3 text-xl font-semibold tracking-tight text-[#efede8] md:text-2xl">
+      <span className="h-3 w-3 rounded-full bg-[#d5ad6c] shadow-[0_0_16px_rgba(213,173,108,0.35)]" />
+      {content.ui.casesTitle}
+    </h2>
 
-            <div className="mb-5 flex items-center justify-between gap-3">
+    <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#77828a]">
+      {featuredProjects.length} / SELECTED
+    </span>
+  </div>
 
-              <h2 className="flex items-center gap-3 text-xl font-semibold tracking-tight text-[#efede8] md:text-2xl">
+  {/* Первый ключевой кейс на всю ширину */}
+  {featuredProjects[0] && (
+    <ProjectCard
+      project={featuredProjects[0]}
+      lang={lang}
+      index={0}
+      featured
+    />
+  )}
 
-                <span className="h-3 w-3 rounded-full bg-[#d5ad6c] shadow-[0_0_16px_rgba(213,173,108,0.35)]" />
+  {/* Мой подход к проектной работе */}
+  <div id="workflow" className="mt-10 border-t border-[#2a3036] pt-8">
 
-                {content.ui.casesTitle}
+    <div className="mb-5 flex items-center gap-3">
+      <span className="h-3 w-3 rounded-full bg-[#d5ad6c] shadow-[0_0_16px_rgba(213,173,108,0.35)]" />
 
-              </h2>
+      <h2 className="text-xl font-semibold tracking-tight text-[#efede8] md:text-2xl">
+        {content.process.title}
+      </h2>
+    </div>
 
-              <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#77828a]">{featuredProjects.length} / SELECTED</span>
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
 
-            </div>
+      {content.process.steps.map((step, index) => (
+        <div
+          key={`${step.title}-${index}`}
+          className="relative flex min-h-[150px] flex-col rounded-lg border border-[#303840] bg-[#11171d] p-4"
+        >
+          <span className="mb-3 flex h-9 w-9 items-center justify-center rounded-full border border-[#9b8057] font-mono text-sm text-[#e1bc7e]">
+            {String(index + 1).padStart(2, '0')}
+          </span>
 
-            {featuredProjects[0] && <ProjectCard project={featuredProjects[0]} lang={lang} index={0} featured />}
+          <h3 className="text-[13px] font-semibold leading-snug text-[#e8e5df]">
+            {step.title}
+          </h3>
 
-          </div>
+          <p className="mt-2 text-[11px] leading-relaxed text-[#859099]">
+            {step.text}
+          </p>
+        </div>
+      ))}
 
-          <div className="space-y-8">
+    </div>
+  </div>
 
-            <div id="workflow">
-
-              <div className="mb-5 flex items-center gap-3">
-
-                <span className="h-3 w-3 rounded-full bg-[#d5ad6c] shadow-[0_0_16px_rgba(213,173,108,0.35)]" />
-
-                <h2 className="text-xl font-semibold tracking-tight text-[#efede8] md:text-2xl">{content.process.title}</h2>
-
-              </div>
-
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
-
-                {content.process.steps.map((step, index) => (
-
-                  <div key={`${step.title}-${index}`} className="relative flex min-h-[135px] flex-col rounded-lg border border-[#303840] bg-[#11171d] p-3.5">
-
-                    <span className="mb-3 flex h-9 w-9 items-center justify-center rounded-full border border-[#9b8057] font-mono text-sm text-[#e1bc7e]">{String(index + 1).padStart(2, '0')}</span>
-
-                    <h3 className="text-[13px] font-semibold leading-snug text-[#e8e5df]">{step.title}</h3>
-
-                    <p className="mt-1.5 text-[11px] leading-relaxed text-[#859099]">{step.text}</p>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-            </div>
-
-            <div className="relative overflow-hidden rounded-xl border border-[#5c4a30] bg-[#15191d] p-5 md:p-6">
-
-              <div className="pointer-events-none absolute -right-12 -top-16 h-56 w-56 rounded-full border border-[#a17f4c]/15" />
-
-              <div className="pointer-events-none absolute -right-4 -top-8 h-40 w-40 rounded-full border border-[#a17f4c]/10" />
-
-              <p className="relative mb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-[#c5a16a]">03 / AI TOOLS</p>
-
-              <h2 className="relative text-lg font-semibold text-[#efebe3]">{content.ai.title}</h2>
-
-              <p className="relative mt-2 max-w-lg text-[12px] leading-relaxed text-[#939da3]">
-
-                {isRu ? 'Применяю ИИ в аналитике, контенте и повседневных рабочих процессах.' : 'Applying AI to research, content and everyday workflows.'}
-
-              </p>
-
-              <div className="relative mt-4 grid gap-2 sm:grid-cols-3">
-
-                {content.ai.points.map((point, index) => (
-
-                  <div key={`${point}-${index}`} className="flex gap-2 rounded-md border border-[#363d40] bg-[#0e1317]/80 p-3">
-
-                    <span className="font-mono text-[11px] text-[#d1aa6c]">0{index + 1}</span>
-
-                    <p className="text-[11px] leading-relaxed text-[#b6bec2]">{point}</p>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
+</section>
 
         {/* Remaining featured cases */}
 
