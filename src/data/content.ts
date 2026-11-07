@@ -222,6 +222,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Администратор: создание и блокировка пользователей, оформление увольнения, сброс паролей, назначение ролей и ведение каталога.',
         ],
         tools: ['Сервисные процессы', 'Проектирование ролей', 'Рабочий прототип'],
+        media: [
+          {
+            type: 'video',
+            url: '/assets/projects/service-app/demo.mp4',
+            caption: 'Демонстрация рабочих сценариев по пяти ролям',
+          },
+        ],
       },
       {
         id: 'kita-rebranding',
@@ -308,40 +315,26 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         ],
       },
       {
-        id: 'process-b24-infra',
+        id: 'operations-bitrix',
         category: 'pm',
-        title: 'Корпоративные операции и IT-поддержка',
+        title: 'Операционные процессы и автоматизация в Bitrix24',
         period: '2024 — 2026',
-        role: 'Project Operations / IT Support',
+        role: 'Project Operations / администратор Bitrix24',
         description:
-          'Административная и техническая поддержка главного офиса в Калининграде: сопровождение корпоративных сервисов, рабочих мест, офисной техники и локальной сети.',
+          'Операционная поддержка головного офиса в Калининграде и проектирование внутренних процессов. Одна часть работы — корпоративные сервисы, рабочие места, офисная техника и локальная сеть. Другая — моделирование в Draw.io сценариев сделки от продажи оборудования до производства, с учётом разных вариантов заводов и последовательностей действий: согласованная логика легла в основу двух автоматизированных воронок Bitrix24. Техническая настройка автоматизаций — зона ответственности внешнего специалиста.',
         result:
-          'Оперативное устранение технических инцидентов и восстановление работоспособности рабочих мест и корпоративных сервисов.',
+          'Две автоматизированные воронки «Продажа → Производство»: на каждом этапе обозначены ответственный сотрудник и следующее действие, логика согласована с CEO. Параллельно — бесперебойная работа рабочих мест и корпоративных сервисов офиса.',
         achievements: [
-          'Администрирование Яндекс Диска и Яндекс Почты: создание учётных записей, настройка прав доступа, резервное копирование данных, контроль поступления и распределения входящей корреспонденции.',
-          'Сопровождение корпоративной мобильной связи: оформление договоров, актов и запросов; заказ и регистрация SIM-карт; взаимодействие с менеджером Билайн и бухгалтерией.',
-          'Полное сопровождение компьютеров, ноутбуков, принтеров и офисной сети: настройка рабочих мест, установка программного обеспечения, предоставление доступов, диагностика и устранение неисправностей.',
+          'Моделирование сценариев прохождения сделки и последовательности действий в Draw.io; подготовка и передача согласованной логики внешнему специалисту.',
+          'Совместное с коллегой администрирование готовых воронок и обучение новых сотрудников работе с ними и с Bitrix24.',
+          'Администрирование Яндекс Диска и Яндекс Почты: учётные записи, права доступа, резервное копирование, контроль входящей корреспонденции.',
+          'Сопровождение офисной техники и локальной сети: настройка рабочих мест, установка ПО, доступы, диагностика и устранение неисправностей.',
+          'Корпоративная мобильная связь: договоры, акты, заявки, заказ и регистрация SIM-карт, взаимодействие с Билайном и бухгалтерией.',
           'Подбор офисной техники, обоснование закупок и защита бюджета.',
         ],
-        tools: ['Bitrix24', 'Яндекс Диск', 'Яндекс Почта', 'Билайн', 'Windows', 'IT Support'],
+        tools: ['Bitrix24', 'Draw.io', 'Яндекс Диск', 'Яндекс Почта', 'Windows', 'IT Support'],
       },
-      {
-        id: 'bitrix24-sales-funnels',
-        category: 'pm',
-        title: 'Проектирование воронок продаж в Bitrix24',
-        period: 'Внутренний проект',
-        role: 'Участник проектирования процессов / администратор Bitrix24',
-        description:
-          'Проектирование в Draw.io сценариев сделки от продажи оборудования до производства с учётом разных вариантов заводов и последовательности действий. Согласованная логика служит основой двух автоматизированных воронок Bitrix24; техническая настройка — зона ответственности внешнего специалиста.',
-        result:
-          'Две автоматизированные воронки «Продажа → Производство»: на каждом этапе обозначены ответственный сотрудник и следующее действие; логика процессов согласована с CEO.',
-        achievements: [
-          'Моделирование сценариев прохождения сделки и последовательности действий в Draw.io.',
-          'Подготовка и передача согласованной логики внешнему специалисту для настройки автоматизаций в Bitrix24.',
-          'Совместное с коллегой администрирование готовых воронок и обучение новых сотрудников работе с ними и Bitrix24.',
-        ],
-        tools: ['Draw.io', 'Bitrix24', 'Обучение сотрудников'],
-      },
+
       {
         id: 'youtube-video-growth',
         category: 'marketing',
@@ -635,6 +628,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Administrator: user creation, blocking, offboarding, password resets, role assignment, and catalogue maintenance.',
         ],
         tools: ['Service Workflow Design', 'Role-Based Workflows', 'Working Prototype'],
+        media: [
+          {
+            type: 'video',
+            url: '/assets/projects/service-app/demo.mp4',
+            caption: 'Walkthrough of workflows across the five roles',
+          },
+        ],
       },
       {
         id: 'kita-rebranding',
@@ -716,40 +716,26 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         ],
       },
       {
-        id: 'process-b24-infra',
+        id: 'operations-bitrix',
         category: 'pm',
-        title: 'Corporate Operations & IT Support',
+        title: 'Operations Processes and Bitrix24 Automation',
         period: '2024 — 2026',
-        role: 'Project Operations / IT Support',
+        role: 'Project Operations / Bitrix24 Administrator',
         description:
-          'Administrative and technical support for the Kaliningrad head office: corporate services, workstations, office equipment, and local network support.',
+          'Operational support for the Kaliningrad head office plus internal process design. One half is corporate services, workstations, office equipment, and the local network. The other is mapping sales-to-production deal scenarios in Draw.io, including different factory options and action sequences: the agreed logic became the basis for two automated Bitrix24 funnels. Technical configuration of the automations is handled by an external specialist.',
         result:
-          'Timely resolution of technical incidents and restoration of workstation and corporate service availability.',
+          'Two automated \u201cSales \u2192 Production\u201d funnels with a defined responsible employee and next action at every stage, with the logic approved by the CEO. In parallel, uninterrupted operation of office workstations and corporate services.',
         achievements: [
-          'Administration of Yandex Disk and Yandex Mail: account creation, access permissions, data backups, incoming mail monitoring, and correspondence distribution.',
-          'Corporate telecom administration: agreements, service documents, and requests; SIM card ordering and registration; coordination with Beeline and accounting.',
-          'Full support for office PCs, laptops, printers, and the local network: workstation setup, software installation, access configuration, diagnostics, and troubleshooting.',
-          'Office equipment selection, procurement justification, and budget approval.',
-                  ],
-        tools: ['Bitrix24', 'Yandex Disk', 'Yandex Mail', 'Beeline', 'Windows', 'IT Support'],
-      },
-      {
-        id: 'bitrix24-sales-funnels',
-        category: 'pm',
-        title: 'Sales Funnel Process Design in Bitrix24',
-        period: 'Internal project',
-        role: 'Process Design Contributor / Bitrix24 Administrator',
-        description:
-          'Process design in Draw.io for equipment sales-to-production workflows, including different factory scenarios and action sequences. The agreed process logic forms the basis of two automated Bitrix24 funnels; technical configuration is handled by an external specialist.',
-        result:
-          'Two automated “Sales → Production” funnels in Bitrix24, with a visible deal stage, responsible employee, and next action at each stage; process logic approved by the CEO.',
-        achievements: [
-          'Deal scenario mapping and process-step design in Draw.io.',
-          'Preparation and handoff of approved process logic to an external specialist for Bitrix24 automation setup.',
+          'Deal scenario mapping and process-step design in Draw.io; preparation and handoff of the agreed logic to an external specialist.',
           'Joint administration of the completed funnels and training for new employees on Bitrix24 and funnel workflows.',
+          'Administration of Yandex Disk and Yandex Mail: accounts, access permissions, backups, incoming mail monitoring.',
+          'Support for office equipment and the local network: workstation setup, software installation, access configuration, diagnostics and troubleshooting.',
+          'Corporate telecom: agreements, service documents, requests, SIM card ordering and registration, coordination with Beeline and accounting.',
+          'Office equipment selection, procurement justification, and budget approval.',
         ],
-        tools: ['Draw.io', 'Bitrix24', 'Employee Training'],
+        tools: ['Bitrix24', 'Draw.io', 'Yandex Disk', 'Yandex Mail', 'Windows', 'IT Support'],
       },
+
       {
         id: 'youtube-video-growth',
         category: 'marketing',

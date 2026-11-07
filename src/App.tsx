@@ -126,53 +126,7 @@ const VISUAL_COPY: Record<string, { ru: { tag: string; title: string; note: stri
 
   },
 
-  'process-b24-infra': {
 
-    ru: {
-
-      tag: 'OPERATIONS / IT SUPPORT',
-
-      title: 'Здесь будут материалы корпоративной IT-поддержки',
-
-      note: 'Обезличенные схемы структуры Яндекс Диска, примеры управления доступами или фотографии рабочего места и офисной техники.',
-
-    },
-
-    en: {
-
-      tag: 'OPERATIONS / IT SUPPORT',
-
-      title: 'Corporate IT support materials go here',
-
-      note: 'Redacted Yandex Disk structure, access-management examples, or photos of office workstations and equipment.',
-
-    },
-
-  },
-
-  'bitrix24-sales-funnels': {
-
-    ru: {
-
-      tag: 'PROCESS DESIGN / BITRIX24',
-
-      title: 'Здесь будет схема двух автоматизированных воронок',
-
-      note: 'Обезличенная схема Draw.io: этапы сделки от продажи оборудования до производства, ответственные и следующие действия.',
-
-    },
-
-    en: {
-
-      tag: 'PROCESS DESIGN / BITRIX24',
-
-      title: 'Two automated sales funnel diagrams go here',
-
-      note: 'A redacted Draw.io diagram showing deal stages from equipment sales to production, responsibilities, and next actions.',
-
-    },
-
-  },
 
   'service-app': {
 
@@ -198,6 +152,18 @@ const VISUAL_COPY: Record<string, { ru: { tag: string; title: string; note: stri
 
   },
 
+  'operations-bitrix': {
+    ru: {
+      tag: 'ПРОЦЕССЫ / АВТОМАТИЗАЦИЯ',
+      title: 'Здесь будет схема воронок и материалов по операционным процессам',
+      note: 'Обезличенная схема Draw.io: этапы сделки от продажи до производства, ответственные и следующие действия.',
+    },
+    en: {
+      tag: 'PROCESSES / AUTOMATION',
+      title: 'Funnel diagram and operations materials go here',
+      note: 'A redacted Draw.io diagram: deal stages from sales to production, owners and next actions.',
+    },
+  },
   'youtube-video-growth': {
 
     ru: {
