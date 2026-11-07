@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import {
 
@@ -610,6 +610,206 @@ function MediaVideo({
 
 }
 
+function MediaLightbox({
+  item,
+  onClose,
+  onPrev,
+  onNext,
+  hasPrev,
+  hasNext,
+  title,
+  lang,
+}: {
+  item: Extract<NonNullable<Project['media']>[number], { type: 'image' }>;
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+  hasPrev: boolean;
+  hasNext: boolean;
+  title: string;
+  lang: Lang;
+}) {
+  const isRu = lang === 'ru';
+
+  // Закрытие по Escape
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [onClose]);
+
+  // Предотвращение прокрутки фона
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+      onClick={onClose}
+    >
+      <button
+        onClick={onClose}
+        className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20"
+        aria-label={isRu ? 'Закрыть' : 'Close'}
+      >
+        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      {hasPrev && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onPrev();
+          }}
+          className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20"
+          aria-label={isRu ? 'Предыдущее изображение' : 'Previous image'}
+        >
+          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+      )}
+
+      {hasNext && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onNext();
+          }}
+          className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20"
+          aria-label={isRu ? 'Следующее изображение' : 'Next image'}
+        >
+          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      )}
+
+      <div
+        className="relative max-h-[90vh] max-w-[90vw]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <img
+          src={assetUrl(item.url)}
+          alt={item.caption || title}
+          className="block max-h-[90vh] max-w-full object-contain"
+        />
+        {item.caption && (
+          <p className="mt-3 text-center text-sm text-white/80">{item.caption}</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function MediaLightbox({
+  item,
+  onClose,
+  onPrev,
+  onNext,
+  hasPrev,
+  hasNext,
+  title,
+  lang,
+}: {
+  item: Extract<NonNullable<Project['media']>[number], { type: 'image' }>;
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+  hasPrev: boolean;
+  hasNext: boolean;
+  title: string;
+  lang: Lang;
+}) {
+  const isRu = lang === 'ru';
+
+  // Закрытие по Escape
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [onClose]);
+
+  // Предотвращение прокрутки фона
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+      onClick={onClose}
+    >
+      <button
+        onClick={onClose}
+        className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20"
+        aria-label={isRu ? 'Закрыть' : 'Close'}
+      >
+        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      {hasPrev && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onPrev();
+          }}
+          className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20"
+          aria-label={isRu ? 'Предыдущее изображение' : 'Previous image'}
+        >
+          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+      )}
+
+      {hasNext && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onNext();
+          }}
+          className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20"
+          aria-label={isRu ? 'Следующее изображение' : 'Next image'}
+        >
+          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      )}
+
+      <div
+        className="relative max-h-[90vh] max-w-[90vw]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <img
+          src={assetUrl(item.url)}
+          alt={item.caption || title}
+          className="block max-h-[90vh] max-w-full object-contain"
+        />
+        {item.caption && (
+          <p className="mt-3 text-center text-sm text-white/80">{item.caption}</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function ProjectMediaGallery({
 
   project,
@@ -633,6 +833,8 @@ function ProjectMediaGallery({
 }) {
 
   const [activeIndex, setActiveIndex] = useState(0);
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const visualMedia = (project.media ?? []).filter(
 
@@ -670,15 +872,37 @@ function ProjectMediaGallery({
 
       <div className="relative">
 
-        {currentItem.type === 'image' ? (
-
-          <MediaImage key={currentItem.url} item={currentItem} title={project.title} lang={lang} />
-
-        ) : (
-
-          <MediaVideo key={currentItem.url} item={currentItem} title={project.title} lang={lang} />
-
-        )}
+{currentItem.type === 'image' && (
+  <div
+    className="cursor-pointer"
+    onClick={() => setLightboxOpen(true)}
+    role="button"
+    tabIndex={0}
+    onKeyDown={(e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setLightboxOpen(true);
+      }
+    }}
+    aria-label={lang === 'ru' ? 'Открыть изображение в полном размере' : 'Open image in full size'}
+  >
+          <div
+            className="cursor-pointer"
+            onClick={() => setLightboxOpen(true)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setLightboxOpen(true);
+              }
+            }}
+            aria-label={isRu ? 'Открыть изображение в полном размере' : 'Open image in full size'}
+          >
+            <MediaImage key={currentItem.url} item={currentItem} title={project.title} lang={lang} />
+          </div>
+  </div>
+)}
 
         {visualMedia.length > 1 && (
 
@@ -767,13 +991,22 @@ function ProjectMediaGallery({
           )}
 
         </div>
-
       )}
 
+      {lightboxOpen && (
+        <MediaLightbox
+          item={currentItem as Extract<NonNullable<Project['media']>[number], { type: 'image' }>}
+          onClose={() => setLightboxOpen(false)}
+          onPrev={goToPrevious}
+          onNext={goToNext}
+          hasPrev={visualMedia.length > 1}
+          hasNext={visualMedia.length > 1}
+          title={project.title}
+          lang={lang}
+        />
+      )}
     </div>
-
   );
-
 }
 
 function ProjectPublications({
