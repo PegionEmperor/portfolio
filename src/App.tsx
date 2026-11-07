@@ -733,7 +733,6 @@ function ProjectMediaGallery({
 }) {
 
   const [activeIndex, setActiveIndex] = useState(0);
-    const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const visualMedia = (project.media ?? []).filter(
@@ -772,20 +771,7 @@ function ProjectMediaGallery({
 
       <div className="relative">
 
-{currentItem.type === 'image' && (
-  <div
-    className="cursor-pointer"
-    onClick={() => setLightboxOpen(true)}
-    role="button"
-    tabIndex={0}
-    onKeyDown={(e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        setLightboxOpen(true);
-      }
-    }}
-    aria-label={lang === 'ru' ? 'Открыть изображение в полном размере' : 'Open image in full size'}
-  >
+        {currentItem.type === 'image' ? (
           <div
             className="cursor-pointer"
             onClick={() => setLightboxOpen(true)}
@@ -801,8 +787,9 @@ function ProjectMediaGallery({
           >
             <MediaImage key={currentItem.url} item={currentItem} title={project.title} lang={lang} />
           </div>
-  </div>
-)}
+        ) : (
+          <MediaVideo key={currentItem.url} item={currentItem} title={project.title} lang={lang} />
+        )}
 
         {visualMedia.length > 1 && (
 
