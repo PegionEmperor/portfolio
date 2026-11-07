@@ -256,13 +256,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         media: [
           {
             type: 'image',
-            url: '/assets/projects/kita/NewLogo.png',
-            caption: 'Новый логотип бренда',
+            url: '/assets/projects/kita/PresentationCover.png',
+            caption: 'Обложка итоговой презентации',
           },
           {
             type: 'image',
-            url: '/assets/projects/kita/PresentationCover.png',
-            caption: 'Обложка итоговой презентации',
+            url: '/assets/projects/kita/NewLogo.png',
+            caption: 'Новый логотип бренда',
           },
         ],
       },
@@ -292,7 +292,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           },
         ],
       },
-      {
+       {
         id: 'digital-showcase',
         category: 'pm',
         featured: true,
@@ -311,7 +311,21 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         ],
         tools: ['Figma', 'Bitrix24', 'Требования к веб-разработке', 'Опросы'],
         media: [
-          { type: 'link', url: 'https://pack-5.ru/', caption: 'Открыть сайт PACK-5' },
+          {
+            type: 'image',
+            url: '/assets/projects/digital-showcase/glavnyy-ekran.png',
+            caption: 'Главный экран цифровой витрины PACK-5',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/digital-showcase/cifrovaya-vitrina.png',
+            caption: 'Раздел витрины с упаковочными решениями',
+          },
+          {
+            type: 'link',
+            url: 'https://pack-5.ru/',
+            caption: 'Открыть сайт PACK-5',
+          },
         ],
       },
       {
@@ -657,13 +671,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         media: [
           {
             type: 'image',
-            url: '/assets/projects/kita/NewLogo.png',
-            caption: 'New brand logo',
+            url: '/assets/projects/kita/PresentationCover.png',
+            caption: 'Cover of the final presentation',
           },
           {
             type: 'image',
-            url: '/assets/projects/kita/PresentationCover.png',
-            caption: 'Cover of the final presentation',
+            url: '/assets/projects/kita/NewLogo.png',
+            caption: 'New brand logo',
           },
         ],
       },
@@ -711,8 +725,22 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Organization and structuring of feedback from trade show visitors.',
         ],
         tools: ['Figma', 'Bitrix24', 'Web Requirements', 'Surveys'],
-        media: [
-          { type: 'link', url: 'https://pack-5.ru/', caption: 'Open PACK-5 website' },
+                media: [
+          {
+            type: 'image',
+            url: '/assets/projects/digital-showcase/glavnyy-ekran.png',
+            caption: 'PACK-5 showcase home screen',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/digital-showcase/cifrovaya-vitrina.png',
+            caption: 'Showcase section with packaging solutions',
+          },
+          {
+            type: 'link',
+            url: 'https://pack-5.ru/',
+            caption: 'Open the PACK-5 website',
+          },
         ],
       },
       {
