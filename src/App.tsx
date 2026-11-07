@@ -536,7 +536,7 @@ function MediaImage({
 
     return (
 
-      <div className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-2 bg-[#11171d] px-5 text-center">
+      <div className="flex aspect-[16/10] w-full flex-col items-center justify-center gap-2 bg-[#11171d] px-5 text-center">
 
         <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#b99a69]">
 
@@ -564,7 +564,7 @@ function MediaImage({
 
       onError={() => setFailed(true)}
 
-      className="aspect-[4/3] w-full bg-[#0b1014] object-contain"
+      className="aspect-[16/10] w-full bg-[#0b1014] object-cover"
 
     />
 
@@ -596,7 +596,7 @@ function MediaVideo({
 
     return (
 
-      <div className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-2 bg-[#11171d] px-5 text-center">
+      <div className="flex aspect-[16/10] w-full flex-col items-center justify-center gap-2 bg-[#11171d] px-5 text-center">
 
         <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#b99a69]">
 
@@ -630,7 +630,7 @@ function MediaVideo({
 
       onError={() => setFailed(true)}
 
-      className="aspect-[4/3] w-full bg-[#050708] object-contain"
+      className="aspect-[16/10] w-full bg-[#050708] object-contain"
 
     >
 
@@ -912,15 +912,20 @@ function ProjectCard({
 
 }) {
 
-  const [expanded, setExpanded] = useState(featured && project.id !== 'trendbooks');
+  const [expanded, setExpanded] = useState(featured);
 
   const imageIndex = index + 1;
 
   const isRu = lang === 'ru';
 
-  const showGallery = project.id !== 'trendbooks';
+  const visualMedia = (project.media ?? []).filter(
+    (item) => item.type === 'image' || item.type === 'video',
+  );
+  const showGallery = visualMedia.length > 0;
 
-  const imageLink = project.media?.find((item) => item.type === 'link');
+  const projectLinks = (project.media ?? []).filter(
+    (item): item is Extract<ProjectMedia, { type: 'link' }> => item.type === 'link',
+  );
 
   return (
 
@@ -1041,15 +1046,17 @@ function ProjectCard({
 
           </div>
 
-          {imageLink && (
-
-            <a href={assetUrl(imageLink.url)} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-2 text-[12px] font-semibold text-[#c4a777] hover:text-[#e2c99d]">
-
-              {imageLink.caption || imageLink.url}<ArrowUpRight />
-
+          {projectLinks.map((link) => (
+            <a
+              key={link.url}
+              href={assetUrl(link.url)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 text-[12px] font-semibold text-[#c4a777] hover:text-[#e2c99d]"
+            >
+              {link.caption || link.url}<ArrowUpRight />
             </a>
-
-          )}
+          ))}
 
         </div>
 
@@ -1317,41 +1324,6 @@ export default function App() {
       featured
     />
   )}
-
-  {/* Мой подход к проектной работе */}
-  <div id="workflow" className="mt-10 border-t border-[#2a3036] pt-8">
-
-    <div className="mb-5 flex items-center gap-3">
-      <span className="h-3 w-3 rounded-full bg-[#d5ad6c] shadow-[0_0_16px_rgba(213,173,108,0.35)]" />
-
-      <h2 className="text-xl font-semibold tracking-tight text-[#efede8] md:text-2xl">
-        {content.process.title}
-      </h2>
-    </div>
-
-    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
-
-      {content.process.steps.map((step, index) => (
-        <div
-          key={`${step.title}-${index}`}
-          className="relative flex min-h-[150px] flex-col rounded-lg border border-[#303840] bg-[#11171d] p-4"
-        >
-          <span className="mb-3 flex h-9 w-9 items-center justify-center rounded-full border border-[#9b8057] font-mono text-sm text-[#e1bc7e]">
-            {String(index + 1).padStart(2, '0')}
-          </span>
-
-          <h3 className="text-[13px] font-semibold leading-snug text-[#e8e5df]">
-            {step.title}
-          </h3>
-
-          <p className="mt-2 text-[11px] leading-relaxed text-[#859099]">
-            {step.text}
-          </p>
-        </div>
-      ))}
-
-    </div>
-  </div>
 
 </section>
 

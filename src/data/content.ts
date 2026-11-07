@@ -66,7 +66,6 @@ export interface ContentSection {
     closeMenuLabel: string;
     categoryLabels: Record<ProjectCategory, string>;
   };
-  process: { title: string; steps: { title: string; text: string }[] };
   ai: { title: string; points: string[] };
   about: {
     title: string;
@@ -86,7 +85,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
     hero: {
       title: 'Project Manager / Operations Manager',
       subtitle:
-        'Организую проектную и операционную работу: от описания процессов и планирования до координации команды, контроля исполнения и сдачи результата. Опыт в B2B-оборудовании, сервисных продуктах и кросс-функциональных проектах.',
+        'Веду 4–5 проектов одновременно в B2B-оборудовании: собираю требования, координирую команды до 15 человек и довожу до сдачи — от аналитических исследований до выставочных продуктов.',
       cta: 'Написать в Telegram',
       resumeLabel: 'Резюме (PDF)',
       stats: [
@@ -114,28 +113,17 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         gamedev: 'GameDev и 3D',
       },
     },
-    process: {
-      title: 'Мой подход к проектной работе',
-      steps: [
-        { title: 'Цель и требования', text: 'Согласую ожидаемый результат, исходные требования и ограничения с инициатором или заказчиком.' },
-        { title: 'План и команда', text: 'Разбиваю работу на этапы, фиксирую задачи и сроки, координирую участников в Bitrix24.' },
-        { title: 'Сбор информации', text: 'Получаю данные и обратную связь от экспертов, технологов, продуктологов и других участников.' },
-        { title: 'Подготовка результата', text: 'Структурирую материалы, собираю презентацию или прототип, передаю визуальные материалы в дизайн.' },
-        { title: 'Согласование и сдача', text: 'Организую демонстрации, собираю замечания, контролирую правки и передаю результат заказчику или руководству.' },
-      ],
-    },
     ai: {
       title: 'ИИ-инструменты в работе',
       points: [
         'Уверенно использую LLM и генеративные инструменты для аналитики, работы с информацией и подготовки контента',
         'Внутреннее обучение коллег работе с ИИ-инструментами и составлению эффективных запросов',
-        'Применение ИИ-инструментов при проектировании и разработке этого сайта-портфолио',
       ],
     },
     about: {
       title: 'Обо мне',
       text: [
-        'Опыт работы в ГК «МП-Технологии»: август 2024 — ноябрь 2026. С начала 2025 года — расширение зоны ответственности на контент-маркетинг, аналитические продукты, R&D и координацию внутренних процессов.',
+        'Опыт работы в ГК «МП-Технологии»: август 2024 — настоящее время. С начала 2025 года — расширение зоны ответственности на контент-маркетинг, аналитические продукты, R&D и координацию внутренних процессов.',
         'Профессиональный фокус — управление проектами в сфере B2B-оборудования и упаковки: сбор требований, координация экспертов и исполнителей, планирование этапов, контроль сроков и согласований, подготовка итоговых материалов. Одновременная работа с 4–5 проектами; кросс-функциональные команды — до 15 участников.',
         'Операционное направление — административная и техническая поддержка главного офиса в Калининграде. Администрирование Bitrix24, Яндекс Диска и Яндекс Почты; создание учётных записей, настройка прав доступа, резервное копирование данных, сопровождение рабочих мест, офисной техники, локальной сети и корпоративной связи.',
         'Вне работы — художественная литература и коллекционирование книг, стратегические настольные игры, варгеймы и НРИ. Организация турниров на 8–10 участников и игровых выходных в торговом центре от лица HobbyGames: поток посетителей — 60–120 человек за шесть часов. Самостоятельное проведение игровых встреч для групп от 2 до 10 человек и работа в составе команды; ведение регулярной кампании D&D в течение шести месяцев; организация масштабных НРИ-игр.'
@@ -258,6 +246,18 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Коммуникация с клиентом, согласование промежуточных решений, подготовка и проведение финальной презентации.',
         ],
         tools: ['Bitrix24', 'Figma', 'Клиентские встречи', 'Презентации'],
+        media: [
+          {
+            type: 'image',
+            url: '/assets/projects/kita/NewLogo.png',
+            caption: 'Новый логотип бренда',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/kita/PresentationCover.png',
+            caption: 'Обложка итоговой презентации',
+          },
+        ],
       },
       {
         id: 'rd-shelf-life',
@@ -277,6 +277,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Координация передачи образцов и получения результатов лабораторных проверок.',
         ],
         tools: ['Bitrix24', 'Excel', 'Google Sheets', 'Лабораторные отчёты'],
+        media: [
+          {
+            type: 'image',
+            url: '/assets/projects/rd/PresentationCover.png',
+            caption: 'Обложка итоговой презентации по исследованию',
+          },
+        ],
       },
       {
         id: 'digital-showcase',
@@ -397,6 +404,53 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Координация команды из пяти человек и развитие сообществ проекта в VK, Discord и Telegram.',
         ],
         tools: ['Blender', 'Blockbench', 'Photoshop', 'Unity (C#)', 'Trello', 'Discord', 'VK / Telegram'],
+        media: [
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/UnityProject.png',
+            caption: 'Модели для Unity-проекта',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/squirrel.png',
+            caption: '3D-модель персонажа',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/detah-claw.png',
+            caption: 'Blockbench-модель',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/cheburashka.png',
+            caption: 'Blockbench-модель',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/ap1.png',
+            caption: 'Рекламный материал сервера',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/ap2.png',
+            caption: 'Рекламный материал сервера',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/ap4.png',
+            caption: 'Рекламный материал сервера',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/ap5.png',
+            caption: 'Рекламный материал сервера',
+          },
+          {
+            type: 'link',
+            url: 'https://vk.ru/raft_minecraft',
+            caption: 'Открыть сообщество Crystalix во ВКонтакте',
+          },
+        ],
       },
       {
         id: 'industrial-3d-lines',
@@ -414,6 +468,28 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Подготовка вариантов компоновки с разными масштабами и конфигурациями.',
         ],
         tools: ['Blender', '3D-моделирование', 'Промышленная визуализация'],
+        media: [
+          {
+            type: 'image',
+            url: '/assets/projects/industrial-3d/Line1.png',
+            caption: 'Производственная линия',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/industrial-3d/Line2.png',
+            caption: 'Производственная линия',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/industrial-3d/Line3.png',
+            caption: 'Производственная линия',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/industrial-3d/Stand1.png',
+            caption: '3D-модель выставочного стенда',
+          },
+        ],
       },
     ],
   },
@@ -422,7 +498,7 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
     hero: {
       title: 'Project Manager / Operations Manager',
       subtitle:
-        'I organize project and operational work — from process mapping and planning to team coordination, execution control, and delivery. My experience includes B2B equipment, service products, and cross-functional projects.',
+        'Running 4–5 projects at a time in B2B equipment: gathering requirements, coordinating teams of up to 15, and delivering — from research projects to exhibition products.',
       cta: 'Message on Telegram',
       resumeLabel: 'Resume (Russian PDF)',
       stats: [
@@ -450,28 +526,17 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
         gamedev: 'GameDev & 3D',
       },
     },
-    process: {
-      title: 'My Approach to Project Delivery',
-      steps: [
-        { title: 'Goals & Requirements', text: 'Align the expected outcome, initial requirements, and constraints with the project initiator or client.' },
-        { title: 'Plan & Team', text: 'Break work into stages, define tasks and timelines, and coordinate contributors in Bitrix24.' },
-        { title: 'Information Gathering', text: 'Collect input and feedback from subject-matter experts, technologists, product specialists, and other stakeholders.' },
-        { title: 'Deliverable Preparation', text: 'Structure the materials, assemble a presentation or prototype, and hand visual assets over to design.' },
-        { title: 'Approval & Delivery', text: 'Organize demos, gather feedback, track revisions, and deliver the result to the client or leadership.' },
-      ],
-    },
     ai: {
       title: 'AI Tools in My Workflow',
       points: [
         'Confident user of LLMs and generative tools for research, information processing, and content preparation',
         'Internal training for colleagues on AI tools and effective prompt writing',
-        'Use of AI tools in designing and building this portfolio website',
       ],
     },
     about: {
       title: 'About Me',
       text: [
-        'Professional experience at MP-Technologies Group: August 2024 — November 2026. Since early 2025, the role has also covered content marketing, analytical products, R&D, and internal operations.',
+        'Professional experience at MP-Technologies Group: August 2024 — present. Since early 2025, the role has also covered content marketing, analytical products, R&D, and internal operations.',
         'Project management in B2B equipment and packaging: requirements gathering, expert and contributor coordination, stage planning, timeline and approval control, and preparation of final deliverables. Parallel workload: 4–5 projects; cross-functional teams: up to 15 people.',
         'Operational scope: administrative and technical support for the Kaliningrad head office. Administration of Bitrix24, Yandex Disk, and Yandex Mail; user account creation, access permissions, data backups, workstation support, office equipment, local network, and corporate telecom.',
         'Outside work: fiction and book collecting, strategy board games, wargames, and tabletop role-playing games. Event organization includes tournaments for 8–10 players and HobbyGames gaming weekends at a shopping centre, with visitor flow of 60–120 people over six hours. Hosting sessions for groups of 2–10, independently and as part of a team; running a regular D&D campaign for six months; organizing large-scale tabletop role-playing events.'
@@ -589,6 +654,18 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Client communication, intermediate approvals, and preparation and delivery of the final presentation.',
         ],
         tools: ['Bitrix24', 'Figma', 'Client Meetings', 'Presentations'],
+        media: [
+          {
+            type: 'image',
+            url: '/assets/projects/kita/NewLogo.png',
+            caption: 'New brand logo',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/kita/PresentationCover.png',
+            caption: 'Cover of the final presentation',
+          },
+        ],
       },
       {
         id: 'rd-shelf-life',
@@ -608,6 +685,13 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Coordination of sample transfers and laboratory result collection.',
         ],
         tools: ['Bitrix24', 'Excel', 'Google Sheets', 'Laboratory Reports'],
+        media: [
+          {
+            type: 'image',
+            url: '/assets/projects/rd/PresentationCover.png',
+            caption: 'Final research presentation cover',
+          },
+        ],
       },
       {
         id: 'digital-showcase',
@@ -728,6 +812,53 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Coordination of a five-person team and management of the project communities across VK, Discord, and Telegram.',
         ],
         tools: ['Blender', 'Blockbench', 'Photoshop', 'Unity (C#)', 'Trello', 'Discord', 'VK / Telegram'],
+        media: [
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/UnityProject.png',
+            caption: 'Models for a Unity project',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/squirrel.png',
+            caption: '3D character model',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/detah-claw.png',
+            caption: 'Blockbench model',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/cheburashka.png',
+            caption: 'Blockbench model',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/ap1.png',
+            caption: 'Server promo asset',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/ap2.png',
+            caption: 'Server promo asset',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/ap4.png',
+            caption: 'Server promo asset',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/3d-models/ap5.png',
+            caption: 'Server promo asset',
+          },
+          {
+            type: 'link',
+            url: 'https://vk.ru/raft_minecraft',
+            caption: 'Open the Crystalix community on VK',
+          },
+        ],
       },
       {
         id: 'industrial-3d-lines',
@@ -745,6 +876,28 @@ export const PORTFOLIO_DATA: Record<Lang, ContentSection> = {
           'Preparation of layout variations with different scales and configurations.',
         ],
         tools: ['Blender', '3D Modeling', 'Industrial Visualization'],
+        media: [
+          {
+            type: 'image',
+            url: '/assets/projects/industrial-3d/Line1.png',
+            caption: 'Production line',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/industrial-3d/Line2.png',
+            caption: 'Production line',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/industrial-3d/Line3.png',
+            caption: 'Production line',
+          },
+          {
+            type: 'image',
+            url: '/assets/projects/industrial-3d/Stand1.png',
+            caption: '3D model of the exhibition stand',
+          },
+        ],
       },
     ],
   },
